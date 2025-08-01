@@ -24,3 +24,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hero-gradient {
+  background: radial-gradient(
+      72.52% 42.88% at 73.32% 82.63%,
+      rgba(170, 220, 189, 0.24) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      43.33% 47.76% at 50.77% 72.86%,
+      rgba(234, 196, 33, 0.05) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      65.71% 43.42% at 22.18% 90.23%,
+      rgba(255, 154, 0, 0.15) 35%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #22125b;
+}
