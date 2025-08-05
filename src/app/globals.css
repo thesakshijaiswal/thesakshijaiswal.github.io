@@ -22,7 +22,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
 }
 
 .hero-gradient {
@@ -42,4 +42,9 @@ body {
       rgba(255, 255, 255, 0) 100%
     ),
     #22125b;
+}
+
+.hero-tagline {
+  font-family: IBMPlexMono, ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, Liberation Mono, Courier New, monospace;
 }
