@@ -1,5 +1,5 @@
-import { FiMoon } from "react-icons/fi";
 import FlipwordsAnimation from "@/components/FlipwordsAnimation";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Hero() {
   return (
@@ -13,12 +13,7 @@ export default function Hero() {
             >
               Sakshi
             </a>
-            <button
-              aria-label="Switch to dark mode"
-              className="p-2 rounded-lg hover:bg-white/5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-400 text-xl text-slate-200"
-            >
-              <FiMoon />
-            </button>
+            <ThemeToggle />
           </div>
           <div className="mt-9 md:mt-28">
             <p className="text-sm md:text-xl lg:text-2xl font-medium tracking-wide text-slate-200 mb-2">
