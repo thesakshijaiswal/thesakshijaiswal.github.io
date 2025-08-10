@@ -12,16 +12,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f172a;
+    --background: #171823;
     --foreground: #cbd5e1;
   }
 }
 [data-theme="dark"] {
-  --background: #0f172a;
+  --background: #171823;
   --foreground: #cbd5e1;
 }
 [data-theme="light"] {
-  --background: #fff;
+  --background: #f8f7f4;
   --foreground: #171717;
 }
 
