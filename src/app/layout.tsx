@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   description: "My personal portfolio website!",
   keywords: ["portfolio", "web developer", "Sakshi Jaiswal"],
   authors: [{ name: "Sakshi Jaiswal" }],
-  viewport: "width=device-width, initial-scale=1",
   openGraph: {
     title: "Sakshi Jaiswal - Portfolio",
     description: "My personal portfolio website!",

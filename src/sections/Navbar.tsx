@@ -1,31 +1,43 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/" },
+  { label: "Skills", href: "/tabs/skills" },
+  { label: "Projects", href: "/tabs/projects" },
+  { label: "Experience", href: "/tabs/experience" },
+  { label: "Contact", href: "/tabs/contact" },
 ];
+
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
-    <section>
-      <nav className="text-muted mt-11 hidden min-w-44 shrink-0 text-sm md:block">
-        <ul>
-          {navLinks.map((link) => (
+    <nav className="text-muted mt-11 hidden min-w-44 shrink-0 text-sm md:block">
+      <ul>
+        {navLinks.map((link) => {
+          const isActive = pathname === link.href;
+          return (
             <li
               key={link.label}
-              className="text-strong mb-3 ml-2 text-sm font-medium tracking-wider"
+              className="mb-3 ml-2 text-sm font-medium tracking-wider"
             >
-              <a
+              <Link
                 href={link.href}
-                className="flex items-center gap-1.5 rounded-md px-2 py-1 focus:outline-none font-medium"
+                className={`flex items-center gap-1.5 rounded-md px-2 py-1 font-medium transition-colors ${
+                  isActive
+                    ? "bg-gray-300 text-gray-900 dark:bg-gray-700 dark:text-gray-100"
+                    : "hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
-          ))}
-        </ul>
-      </nav>
-    </section>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }
