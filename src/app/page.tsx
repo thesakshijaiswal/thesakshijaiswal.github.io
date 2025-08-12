@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Hero />
       <BaseLayout>
-        <div className="p-6">
+        <div className="">
           <h1 className="text-2xl font-bold">About Me</h1>
           <p className="mt-4 text-gray-600">
             This is the About section content.

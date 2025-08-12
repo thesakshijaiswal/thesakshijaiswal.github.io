@@ -34,24 +34,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                function getTheme() {
-                  const stored = localStorage.getItem('theme');
-                  if (stored === 'light' || stored === 'dark') return stored;
-                  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    return 'dark';
-                  }
-                  return 'light';
-                }
-                
-                const theme = getTheme();
-                const root = document.documentElement;
-                
-                if (theme === 'dark') {
-                  root.classList.add('dark');
-                  root.setAttribute('data-theme', 'dark');
-                } else {
-                  root.classList.remove('dark');
-                  root.setAttribute('data-theme', 'light');
+                const stored = localStorage.getItem('theme') || 'system';
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (stored === 'dark' || (stored === 'system' && prefersDark)) {
+                  document.documentElement.classList.add('dark');
                 }
               })();
             `,
