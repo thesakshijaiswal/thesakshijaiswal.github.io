@@ -10,7 +10,7 @@ export default function BaseLayout({
       <Navbar />
       <div className="min-w-0 flex-1 md:-mt-16">
         <main className="flex-1">
-          <div className="relative divide-y border border-gray-300 dark:border-white/20 rounded-none border-x-0 shadow-2xl md:rounded-xl md:border-x bg-white dark:bg-[#242533]">
+          <div className="relative divide-y border border-gray-300/70 dark:border-white/20 rounded-none border-x-0 shadow-2xl md:rounded-xl md:border-x bg-white dark:bg-[#242533]">
             <div className="p-6">{children}</div>
           </div>
         </main>
