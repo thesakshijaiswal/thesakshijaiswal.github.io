@@ -2,14 +2,46 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  FaUserTie,
+  FaCode,
+  FaBriefcase,
+  FaFileCode,
+  FaUserGraduate,
+  FaComments,
+} from "react-icons/fa";
 
 const navLinks = [
-  { label: "Who am I ?", href: "/" },
-  { label: "Skills", href: "/tabs/skills" },
-  { label: "Experience", href: "/tabs/experience" },
-  { label: "Projects", href: "/tabs/projects" },
-  { label: "Education", href: "/tabs/education" },
-  { label: "Contact", href: "/tabs/contact" },
+  {
+    label: "Who am I ?",
+    href: "/",
+    icon: FaUserTie,
+  },
+  {
+    label: "My Superpowers",
+    href: "/tabs/skills",
+    icon: FaCode,
+  },
+  {
+    label: "Experience & Impact",
+    href: "/tabs/experience",
+    icon: FaBriefcase,
+  },
+  {
+    label: "Things I've Built",
+    href: "/tabs/projects",
+    icon: FaFileCode,
+  },
+  {
+    label: "Academic Path",
+    href: "/tabs/education",
+    icon: FaUserGraduate,
+  },
+  {
+    label: "Let's Talk",
+    href: "/tabs/contact",
+    icon: FaComments,
+  },
 ];
 
 export default function Navbar() {
@@ -20,6 +52,8 @@ export default function Navbar() {
       <ul>
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
+          const IconComponent = link.icon;
+
           return (
             <li
               key={link.label}
@@ -27,13 +61,20 @@ export default function Navbar() {
             >
               <Link
                 href={link.href}
-                className={`flex items-center gap-1.5 rounded-md px-2 py-1 font-medium transition-colors ${
+                className={`flex items-center gap-3 rounded-md px-3 py-2.5 font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-blue-600 text-gray-100"
-                    : "hover:bg-gray-100/70 dark:hover:bg-[#2d2f3e]"
+                    ? "bg-blue-500 text-gray-100"
+                    : "text-gray-600 hover:text-gray-950 dark:hover:text-gray-100 dark:text-gray-300 hover:bg-gray-100/70 dark:hover:bg-[#2d2f3e]"
                 }`}
               >
-                {link.label}
+                <IconComponent
+                  className={`text-base shrink-0 ${
+                    isActive
+                      ? "text-gray-100"
+                      : "text-gray-500 dark:text-gray-400"
+                  }`}
+                />
+                <span className="leading-none">{link.label}</span>
               </Link>
             </li>
           );
