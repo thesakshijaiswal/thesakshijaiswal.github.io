@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --glow-color: #b1a5f1;
 }
 
 @theme inline {
@@ -15,6 +16,7 @@
 .dark {
   --background: #171823;
   --foreground: #cbd5e1;
+  --glow-color: #22125b;
 }
 
 body {
