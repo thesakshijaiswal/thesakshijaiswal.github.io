@@ -1,6 +1,9 @@
+import Image from "next/image";
+import Avatar from "@/assets/Sakshi_Ghibli.png";
 import GlowLine from "@/components/GlowLine";
 import Tag from "@/components/Tag";
 import Button from "@/components/Button";
+import LogoBox from "@/components/LogoBox";
 import {
   MdOutlineCloudDownload,
   MdOutlineOfflineBolt,
@@ -13,8 +16,12 @@ export default function AboutPage() {
     <div className="relative flex">
       <GlowLine orientation="vertical" position="0px" />
       <div className="ml-8">
-        <h1 className="text-2xl font-bold">Who Am I?</h1>
-
+        <div className="flex mb-10 items-center gap-4">
+          <LogoBox>
+            <Image src={Avatar} alt="Profile picture" width={80} height={80} />
+          </LogoBox>
+          <h1 className="text-2xl font-bold">Who Am I?</h1>
+        </div>
         <div className="mt-5 flex gap-2 flex-wrap items-center">
           <Tag
             icon={
