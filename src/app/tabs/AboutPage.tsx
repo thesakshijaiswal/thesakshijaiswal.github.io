@@ -1,8 +1,13 @@
 import GlowLine from "@/components/GlowLine";
 import Tag from "@/components/Tag";
-import { MdOutlineOfflineBolt, MdOutlineCalendarToday } from "react-icons/md";
+import Button from "@/components/Button";
+import {
+  MdOutlineCloudDownload,
+  MdOutlineOfflineBolt,
+  MdOutlineCalendarToday,
+} from "react-icons/md";
 import { GrLocation } from "react-icons/gr";
-
+import { HiArrowRight } from "react-icons/hi";
 export default function AboutPage() {
   return (
     <div className="relative flex">
@@ -66,6 +71,21 @@ export default function AboutPage() {
             being a consistent academic topper and graduating in 2024. I&apos;m
             currently open to full-time roles and freelance opportunities.
           </p>
+        </div>
+
+        <div className="flex gap-3 mt-7 flex-wrap">
+          <Button
+            text="Get my Resume"
+            icon={<MdOutlineCloudDownload size={18} />}
+            href="/Sakshi_Jaiswal_Frontend_Developer.pdf"
+            title="Get my Resume"
+          />
+          <Button
+            text="Hire Me"
+            icon={<HiArrowRight size={16} />}
+            href="/tabs/contact"
+            title="Work with me"
+          />
         </div>
       </div>
     </div>
