@@ -17,7 +17,7 @@ export default function AboutPage() {
       <GlowLine orientation="vertical" position="0px" />
       <div className="ml-8">
         <div className="flex mb-10 items-center gap-4">
-          <LogoBox>
+          <LogoBox className="overflow-hidden place-content-baseline">
             <Image src={Avatar} alt="Profile picture" width={80} height={80} />
           </LogoBox>
           <h1 className="text-2xl font-bold">Who Am I?</h1>
