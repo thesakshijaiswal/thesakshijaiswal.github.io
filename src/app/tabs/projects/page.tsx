@@ -1,10 +1,16 @@
+import SkillFlip from "@/components/SkillFlip";
+import LogoBox from "@/components/LogoBox";
 export default function ProjectsPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Top Projects</h1>
-      <p className="mt-4 text-gray-500">
-        This is the Projects section content.
-      </p>
+    <div className="relative flex">
+      <div className="sm:ml-8">
+        <div className="flex mb-10 items-center gap-4">
+          <LogoBox className="place-content-center">
+            <SkillFlip />
+          </LogoBox>
+          <h1 className="text-2xl font-bold">Things I&apos;ve Built</h1>
+        </div>
+      </div>
     </div>
   );
 }
