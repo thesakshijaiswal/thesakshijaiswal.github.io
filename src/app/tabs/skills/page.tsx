@@ -11,6 +11,22 @@ export default function SkillsPage() {
           </LogoBox>
           <h1 className="text-2xl font-bold">My SuperPowers</h1>
         </div>
+
+        <div className="mt-4 text-gray-600 dark:text-gray-500 space-y-6 leading-relaxed text-sm md:text-base">
+          <p>
+            Every creator has their toolkit, but I like to think of mine as
+            superpowers. From weaving clean UIs to powering up backends, these
+            are the skills that help me turn ideas into experiences.
+          </p>
+        </div>
+
+        <div>
+          <ul>
+            <li>Problem Solving </li>
+            <li>Performance Optimization</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
