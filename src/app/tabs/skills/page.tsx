@@ -1,6 +1,9 @@
 import SkillFlip from "@/components/SkillFlip";
 import LogoBox from "@/components/LogoBox";
-
+import SkillCard from "@/components/SkillCard";
+import { LuBrainCircuit } from "react-icons/lu";
+import { FaLaptopCode } from "react-icons/fa";
+import { MdAutoGraph } from "react-icons/md";
 export default function SkillsPage() {
   return (
     <div className="relative flex">
@@ -19,6 +22,17 @@ export default function SkillsPage() {
             are the skills that help me turn ideas into experiences.
           </p>
         </div>
+
+        <section className="px-4 py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-3 mx-auto text-center">
+            <SkillCard icon={<LuBrainCircuit />} label="Problem Solving" />
+            <SkillCard
+              icon={<MdAutoGraph />}
+              label="Performance Optimization"
+            />
+            <SkillCard icon={<FaLaptopCode />} label="Responsive Design" />
+          </div>
+        </section>
 
         <div>
           <ul>
