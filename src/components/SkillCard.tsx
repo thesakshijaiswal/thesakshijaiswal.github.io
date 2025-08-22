@@ -72,7 +72,7 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
          w-full aspect-[3/4] max-w-sm md:max-w-md lg:max-w-lg
           flex flex-col items-center justify-center
           rounded-xl backdrop-blur-md
-          border border-white/20 dark:border-white/10
+          border border-gray-200 dark:border-white/10
           bg-white/10 dark:bg-white/5
           overflow-hidden touch-manipulation select-none px-2
         "

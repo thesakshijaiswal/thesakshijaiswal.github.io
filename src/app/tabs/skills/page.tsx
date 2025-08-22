@@ -23,7 +23,7 @@ export default function SkillsPage() {
           </p>
         </div>
 
-        <section className="px-2 py-8">
+        <div className="py-8 lg:px-2">
           <div className="grid grid-cols-3 gap-2 sm:gap-4">
             <SkillCard icon={<LuBrainCircuit />} label="Problem Solving" />
             <SkillCard
@@ -32,14 +32,6 @@ export default function SkillsPage() {
             />
             <SkillCard icon={<FaLaptopCode />} label="Responsive Design" />
           </div>
-        </section>
-
-        <div>
-          <ul>
-            <li>Problem Solving </li>
-            <li>Performance Optimization</li>
-            <li>Responsive Design</li>
-          </ul>
         </div>
       </div>
     </div>
