@@ -37,6 +37,12 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
       `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.25), transparent)`
   );
 
+  const borderGloss = useTransform(
+    [glowX, glowY],
+    ([x, y]) =>
+      `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.7), transparent 70%)`
+  );
+
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -69,7 +75,7 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
         onMouseLeave={handleMouseLeave}
         className="
           relative group cursor-pointer
-         w-full aspect-[3/4] max-w-sm md:max-w-md lg:max-w-lg
+          w-full aspect-[3/4] max-w-sm md:max-w-md lg:max-w-lg
           flex flex-col items-center justify-center
           rounded-xl backdrop-blur-md
           border border-gray-200 dark:border-white/10
@@ -81,14 +87,32 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
       >
         {isHovered && (
-          <motion.div
-            className="absolute inset-0 rounded-xl pointer-events-none"
-            style={{ background }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-          />
+          <>
+            <motion.div
+              className="absolute inset-0 rounded-xl pointer-events-none"
+              style={{ background }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            />
+
+            <motion.div
+              className="absolute inset-0 rounded-xl pointer-events-none"
+              style={{
+                padding: "2px",
+                background: borderGloss,
+                WebkitMask:
+                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                WebkitMaskComposite: "xor",
+                maskComposite: "exclude",
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            />
+          </>
         )}
 
         <motion.div
