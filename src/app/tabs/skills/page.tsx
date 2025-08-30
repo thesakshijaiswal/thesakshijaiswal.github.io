@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import SkillFlip from "@/components/SkillFlip";
 import LogoBox from "@/components/LogoBox";
 import SkillCard from "@/components/SkillCard";
@@ -5,6 +6,10 @@ import { LuBrainCircuit } from "react-icons/lu";
 import { MdAutoGraph } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa";
 import SkillTags from "@/components/SkillsTags";
+
+export const metadata: Metadata = {
+  title: "Skills",
+};
 
 export default function SkillsPage() {
   return (

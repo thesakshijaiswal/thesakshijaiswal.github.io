@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import SkillFlip from "@/components/SkillFlip";
 import LogoBox from "@/components/LogoBox";
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
+
 export default function ProjectsPage() {
   return (
     <div className="relative flex">
