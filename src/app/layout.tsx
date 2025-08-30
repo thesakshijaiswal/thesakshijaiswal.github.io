@@ -11,14 +11,21 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Sakshi Jaiswal | FullStack Developer",
-  description:"Hi, I'm Sakshi. I’m a full-stack developer building fast, accessible, and SEO-friendly web experiences. Open to freelance and full-time work.",
-    keywords: [
+  title: {
+    default: "Sakshi Jaiswal | FullStack Developer",
+    template: "Sakshi Jaiswal | %s",
+  },
+  description:
+    "Hi, I'm Sakshi. I’m a full-stack developer building fast, accessible, and SEO-friendly web experiences. Open to freelance and full-time work.",
+  keywords: [
     "Sakshi Jaiswal",
     "Next.js Portfolio",
     "Sakshi",
     "FullStack Developer",
   ],
+  twitter: {
+    card: "summary_large_image",
+  },
   authors: [{ name: "Sakshi Jaiswal" }],
 };
 
