@@ -24,6 +24,7 @@ export default function SkillTags({ sections = SkillSections }: Props) {
               />
             ))}
           </div>
+          <hr className="mt-8 text-gray-500/50" />
         </div>
       ))}
     </div>
