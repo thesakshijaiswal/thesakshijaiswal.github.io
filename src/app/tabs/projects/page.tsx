@@ -3,7 +3,9 @@ import SkillFlip from "@/components/SkillFlip";
 import LogoBox from "@/components/LogoBox";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "My Projects",
+  description:
+    "Showcasing real-world applications and experiments that combine design, usability, and engineering to deliver polished solutions.",
 };
 
 export default function ProjectsPage() {

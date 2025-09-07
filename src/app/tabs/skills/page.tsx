@@ -8,7 +8,9 @@ import { FaLaptopCode } from "react-icons/fa";
 import SkillTags from "@/components/SkillsTags";
 
 export const metadata: Metadata = {
-  title: "Skills",
+  title: "My Skills",
+  description:
+    "Versatile across front-end and back-end development, creating interfaces that feel intuitive and systems that scale with ease.",
 };
 
 export default function SkillsPage() {

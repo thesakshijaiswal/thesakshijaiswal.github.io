@@ -13,10 +13,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: {
     default: "Sakshi Jaiswal | FullStack Developer",
-    template: "Sakshi Jaiswal | %s",
+    template: "%s | Sakshi Jaiswal",
   },
   description:
-    "Hi, I'm Sakshi. I’m a full-stack developer building fast, accessible, and SEO-friendly web experiences. Open to freelance and full-time work.",
+    "Building fast, accessible, and SEO-friendly web experiences with modern tools like React, Next.js, and Node.js.",
   keywords: [
     "Sakshi Jaiswal",
     "Next.js Portfolio",
