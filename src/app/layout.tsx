@@ -11,6 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sakshi.is-cool.dev"),
   title: {
     default: "Sakshi Jaiswal | FullStack Developer",
     template: "%s | Sakshi Jaiswal",
