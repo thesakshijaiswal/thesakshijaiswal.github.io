@@ -1,39 +1,43 @@
 import type { MetadataRoute } from 'next'
+
+export const dynamic = 'force-static'
+
+const baseUrl = 'https://sakshi.is-cool.dev'
  
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://sakshi.is-cool.dev",
+      url: `${baseUrl}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: "https://sakshi.is-cool.dev/tabs/projects",
+      url: `${baseUrl}/tabs/projects`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
      {
-      url: "https://sakshi.is-cool.dev/tabs/experience",
+      url: `${baseUrl}/tabs/experience`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: "https://sakshi.is-cool.dev/tabs/skills",
+      url: `${baseUrl}/tabs/skills`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: "https://sakshi.is-cool.dev/tabs/education",
+      url: `${baseUrl}/tabs/education`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.6,
     },
     {
-      url: "https://sakshi.is-cool.dev/tabs/contact",
+      url: `${baseUrl}/tabs/contact`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.5,
