@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="-2126 -2126 4252 4252"
+    style="enable-background:new -2126 -2126 4252 4252;"
+    xml:space="preserve">
+<defs>
+    <clipPath id="circleClip">
+        <circle cx="0" cy="0" r="2126"/>
+    </clipPath>
+</defs>
+<g clip-path="url(#circleClip)">
+    <circle cx="0" cy="0" r="2126" style="fill:#22125b;"/>
+    <g id="Layer_x5F_1" transform="translate(900, 150) scale(2)">
+        <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;" d="M-780.56,309.297
+            c-31.803,208.379,534.983-34.43,239.906-161.643C-803.651,34.131-913.441-44.27-897.401-265.924
+            c9.126-125.968,137.998-313.606,319.828-380.531C-759.68-473.889-751.384-207.987-514.52-93.22
+            C-336.284-6.936-126.799,79.347-245.438,288.141c-154.038,271.018-860.343,462.113-535.122,21.294V309.297z"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;" d="M-124.172-490.758
+            c19.635-196.349-498.617,58.214-216.538,162.887C-89.188-234.536,17.283-166.643,13.135,41.46
+            c-2.351,118.224-113.8,300.055-280.559,371.405C-105.505,242.649-126.246-5.692-353.43-101.378
+            c-170.907-72.041-370.99-142.561-270.188-343.473c130.807-260.924,781.941-474.004,499.308-46.045L-124.172-490.758z"/>
+    </g>
+</g>
+</svg>
