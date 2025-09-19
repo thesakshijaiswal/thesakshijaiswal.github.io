@@ -13,7 +13,7 @@ export default function ExperiencePage() {
   return (
     <div className="sm:ml-8">
       <div className="flex mb-10 items-center gap-4">
-        <LogoBox className="place-content-center">
+        <LogoBox className="place-content-center size-20">
           <ExperienceFlip />
         </LogoBox>
         <h1 className="text-2xl font-bold">My Experience</h1>
@@ -25,18 +25,24 @@ export default function ExperiencePage() {
 
       <div className="mt-5 space-y-8">
         {experienceData.map((data) => (
-          <div key={data.name} className="space-y-3">
-            <div className="flex justify-between">
-              <h2 className="text-lg font-semibold">{data.name}</h2>
-              <p className="text-sm text-gray-500">{data.duration}</p>
+          <LogoBox key={data.name} className="space-y-3 lg:px-5 py-3 px-3">
+            <div className="flex justify-between items-center">
+              <h2 className="md:text-lg font-semibold text-base">
+                {data.name}
+              </h2>
+              <p className="text-xs md:text-sm text-gray-500">
+                {data.duration}
+              </p>
             </div>
-            <h3 className="text-md font-medium">{data.role}</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-600">
+            <h3 className="text-sm font-medium">{data.role}</h3>
+            <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
               {data.description.map((point, i) => (
-                <li key={i}>{point}</li>
+                <li key={i} className="mb-2">
+                  {point}
+                </li>
               ))}
             </ul>
-          </div>
+          </LogoBox>
         ))}
       </div>
     </div>

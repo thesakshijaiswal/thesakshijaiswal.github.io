@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     <div className="relative flex">
       <div className="sm:ml-8">
         <div className="flex mb-10 items-center gap-4">
-          <LogoBox className="place-content-center">
+          <LogoBox className="place-content-center size-20">
             <SkillFlip />
           </LogoBox>
           <h1 className="text-2xl font-bold">Things I&apos;ve Built</h1>
