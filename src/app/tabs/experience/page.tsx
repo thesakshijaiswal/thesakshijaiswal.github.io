@@ -28,7 +28,7 @@ export default function ExperiencePage() {
           <LogoBox key={data.name} className="space-y-3 lg:px-5 py-3 px-3">
             <div className="flex justify-between items-center">
               <div className="flex lg:gap-4 gap-2 items-center">
-                <LogoBox className="size-10 place-content-center text-xs">
+                <LogoBox className="hidden sm:flex size-10 items-center justify-center text-xs">
                   Logo
                 </LogoBox>
                 <h2 className="md:text-lg font-semibold text-base">
@@ -39,6 +39,7 @@ export default function ExperiencePage() {
                 {data.duration}
               </p>
             </div>
+
             <h3 className="text-sm font-medium">{data.role}</h3>
             <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-500 text-sm">
               {data.description.map((point, i) => (
