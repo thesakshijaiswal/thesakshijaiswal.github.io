@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import LogoBox from "@/components/LogoBox";
 import ExperienceFlip from "@/components/ExperienceFlip";
 import { experienceData } from "@/data/experienceData";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -28,8 +29,8 @@ export default function ExperiencePage() {
           <LogoBox key={data.name} className="space-y-3 lg:px-5 py-3 px-3">
             <div className="flex justify-between items-center">
               <div className="flex lg:gap-4 gap-2 items-center">
-                <LogoBox className="hidden sm:flex size-10 items-center justify-center text-xs">
-                  Logo
+                <LogoBox className="hidden sm:flex size-10 items-center justify-center text-xs overflow-hidden">
+                  <Image src={data.logo} alt={data.name} />
                 </LogoBox>
                 <h2 className="md:text-lg font-semibold text-base">
                   {data.name}

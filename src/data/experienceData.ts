@@ -1,3 +1,6 @@
+import Logo1 from "@/assets/experience/exp_logo_1.webp";
+import Logo2 from "@/assets/experience/exp_logo_2.webp";
+
 export interface Experience {
   name: string;
   role: string;
@@ -10,6 +13,7 @@ export const experienceData: Experience[] = [
     name: "Ansrsource",
     role: "Junior Frontend Developer",
     duration: "Sept 2024 — Jan 2025",
+    logo: Logo1,
     description: [
       "Delivered scalable, production-ready web applications, ensuring clean design, high performance, and seamless UX.",
       "Shipped features quickly with minimal supervision, consistently meeting deadlines in fast-paced environments.",
@@ -21,6 +25,7 @@ export const experienceData: Experience[] = [
     name: "D2L",
     role: "Web Developer",
     duration: "Nov 2024 — Jan 2025",
+    logo: Logo2,
     description: [
       "Developed 20+ interactive course units on Brightspace LMS, enhancing user engagement across global edtech learners.",
       "Leveraged AI tools to accelerate content delivery, reducing turnaround time while maintaining high quality standards.",
