@@ -1,11 +1,14 @@
 import Logo1 from "@/assets/experience/exp_logo_1.webp";
 import Logo2 from "@/assets/experience/exp_logo_2.webp";
+import { StaticImageData } from "next/image";
 
 export interface Experience {
   name: string;
   role: string;
   duration: string;
   description: string[];
+  logo: StaticImageData;
+
 }
 
 export const experienceData: Experience[] = [

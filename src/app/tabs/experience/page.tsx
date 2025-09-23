@@ -21,7 +21,10 @@ export default function ExperiencePage() {
       </div>
 
       <p className="mt-4 text-gray-500">
-        This is the Experience section content.
+        My experience has been about building things that matter, from crafting
+        clean, production ready apps to shaping engaging learning experiences
+        for global audiences. Along the way I&apos;ve learned to move fast,
+        solve real problems, and create work that leaves an impact.
       </p>
 
       <div className="mt-5 space-y-8">
@@ -30,7 +33,11 @@ export default function ExperiencePage() {
             <div className="flex justify-between items-center">
               <div className="flex lg:gap-4 gap-2 items-center">
                 <LogoBox className="hidden sm:flex size-10 items-center justify-center text-xs overflow-hidden">
-                  <Image src={data.logo} alt={data.name} />
+                  <Image
+                    src={data.logo}
+                    alt={data.name}
+                    className="bg-white p-0.5"
+                  />
                 </LogoBox>
                 <h2 className="md:text-lg font-semibold text-base">
                   {data.name}
