@@ -3,6 +3,7 @@ import LogoBox from "@/components/LogoBox";
 import ExperienceFlip from "@/components/ExperienceFlip";
 import { experienceData } from "@/data/experienceData";
 import Image from "next/image";
+import { MdOfflineBolt } from "react-icons/md";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -49,11 +50,14 @@ export default function ExperiencePage() {
             </div>
 
             <h3 className="text-sm font-medium">{data.role}</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-500 text-sm">
+            <ul className="space-y-1 text-gray-600 dark:text-gray-500 text-sm">
               {data.description.map((point, i) => (
-                <li key={i} className="mb-2">
-                  {point}
-                </li>
+                <div className="flex gap-2" key={i}>
+                  <span>
+                    <MdOfflineBolt className="mt-1 dark:text-emerald-300 text-emerald-500 size-3" />
+                  </span>
+                  <li className="mb-2">{point}</li>
+                </div>
               ))}
             </ul>
           </LogoBox>
