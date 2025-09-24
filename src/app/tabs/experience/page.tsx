@@ -21,10 +21,10 @@ export default function ExperiencePage() {
       </div>
 
       <p className="mt-4 text-gray-500">
-        My experience has been about building things that matter, from crafting
-        clean, production ready apps to shaping engaging learning experiences
-        for global audiences. Along the way I&apos;ve learned to move fast,
-        solve real problems, and create work that leaves an impact.
+        It&apos;s all about building things that matter, from crafting clean,
+        production ready web apps to shaping engaging learning experiences for
+        global audiences. Along the way I&apos;ve learned to move fast, solve
+        real problems, and create work that leaves an impact.
       </p>
 
       <div className="mt-5 space-y-8">

@@ -85,7 +85,7 @@ export const FlipWords = ({
             <motion.span
               key={`${char}-${i}`}
               variants={letterVariants}
-              className="inline-block"
+              className="inline-block [backface-visibility:hidden] will-change-transform translate-z-0"
             >
               {char}
             </motion.span>
