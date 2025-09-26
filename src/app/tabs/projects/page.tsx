@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import SkillFlip from "@/components/SkillFlip";
 import LogoBox from "@/components/LogoBox";
+import WIP from "@/components/WIP";
 
 export const metadata: Metadata = {
   title: "My Projects",
@@ -10,15 +11,18 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="relative flex">
-      <div className="sm:ml-8">
-        <div className="flex mb-10 items-center gap-4">
-          <LogoBox className="place-content-center size-20">
-            <SkillFlip />
-          </LogoBox>
-          <h1 className="text-2xl font-bold">Things I&apos;ve Built</h1>
+    <>
+      <div className="relative flex">
+        <div className="sm:ml-8">
+          <div className="flex mb-10 items-center gap-4">
+            <LogoBox className="place-content-center size-20">
+              <SkillFlip />
+            </LogoBox>
+            <h1 className="text-2xl font-bold">Things I&apos;ve Built</h1>
+          </div>
         </div>
       </div>
-    </div>
+      <WIP />
+    </>
   );
 }

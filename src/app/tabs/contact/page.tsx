@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-
+import WIP from "@/components/WIP";
 export const metadata: Metadata = {
   title: "Contact Me",
   description:
@@ -11,6 +11,7 @@ export default function ContactPage() {
     <div>
       <h1 className="text-2xl font-bold">Contact Me</h1>
       <p className="mt-4 text-gray-500">This is the Contact section content.</p>
+      <WIP />
     </div>
   );
 }

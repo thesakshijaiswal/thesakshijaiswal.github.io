@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import LogoBox from "@/components/LogoBox";
 import { HiAcademicCap } from "react-icons/hi2";
+import WIP from "@/components/WIP";
 export const metadata: Metadata = {
   title: "Education",
   description:
@@ -19,6 +20,7 @@ export default function EducationPage() {
       <p className="mt-4 text-gray-500">
         This is the Education section content.
       </p>
+      <WIP />
     </div>
   );
 }
