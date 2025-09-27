@@ -3,6 +3,7 @@ import Logo2 from "@/assets/experience/exp_logo_2.webp";
 import { StaticImageData } from "next/image";
 
 export interface Experience {
+  id: string;
   name: string;
   role: string;
   duration: string;
@@ -13,6 +14,7 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
+    id: "1",
     name: "Ansrsource",
     role: "Junior Frontend Developer",
     duration: "Sept 2024 — Jan 2025",
@@ -25,6 +27,7 @@ export const experienceData: Experience[] = [
     ],
   },
   {
+    id: "2",
     name: "D2L",
     role: "Web Developer",
     duration: "Nov 2024 — Jan 2025",
