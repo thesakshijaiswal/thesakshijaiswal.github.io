@@ -1,4 +1,4 @@
-export interface Experience {
+export interface Education {
   id: string;
   name: string;
   degree: string;
@@ -7,7 +7,7 @@ export interface Experience {
   score: string;
 }
 
-export const experienceData: Experience[] = [
+export const educationData: Education[] = [
   {
     id: "1",
     name: "Sant Gadge Baba Amravati University",

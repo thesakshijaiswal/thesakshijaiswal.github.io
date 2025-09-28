@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import LogoBox from "@/components/LogoBox";
 import { HiAcademicCap } from "react-icons/hi2";
+import { educationData } from "@/data/educationData";
 import WIP from "@/components/WIP";
+
 export const metadata: Metadata = {
   title: "Education",
   description:
@@ -20,6 +22,20 @@ export default function EducationPage() {
       <p className="mt-4 text-gray-500">
         This is the Education section content.
       </p>
+      <div className="mt-5">
+        {educationData.map((data) => {
+          return (
+            <LogoBox key={data.id} className="p-2 mb-5">
+              <div>
+                <h2 className="font-medium">{data.name}</h2>
+                <h2 className="text-gray-700 text-sm dark:text-gray-400">
+                  {data.degree}
+                </h2>
+              </div>
+            </LogoBox>
+          );
+        })}
+      </div>
       <WIP />
     </div>
   );
