@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌸 My Prettyfolio
 
-## Getting Started
+## ⚡ Personal Portfolio: Sakshi Jaiswal | FullStack Developer
 
-First, run the development server:
+I'm the dev who turns ideas into web experiences people enjoy using. My mission is to build applications that look great, load fast, and work for everyone.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🗂️ Sections
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+✔️ Home\
+✔️ About\
+✔️ Skills \
+✔️ Experience \
+✔️ Projects\
+✔️ Education\
+✔️ Contact Me\
+✔️ Footer
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🧰 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="48" height="48" alt="react"> | <img src="https://skillicons.dev/icons?i=nextjs" width="48" height="48" alt="next"> | <img src="https://skillicons.dev/icons?i=javascript" width="48" height="48" alt="Javascript"> | <img src="https://skillicons.dev/icons?i=typescript" width="48" height="48" alt="typescript"> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"  width="48" height="48" alt="tailwindcss" /> | <img src="https://raw.githubusercontent.com/detain/svg-logos/b02ee1ac30c7ff4757278337c95588b01ed0954b/svg/f/framer-motion.svg" width="48" height="48"> |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **React** | **Next** | **Javascript** | **TypeScript** | **Tailwind CSS** | **Framer Motion** |
 
-## Learn More
+|<img src="https://raw.githubusercontent.com/react-icons/react-icons/master/react-icons.svg" width="48" height="48" alt="react-icons">|<img src="https://devicon-website.vercel.app/api/github/original.svg?color=%23FF0091" width="48" height="48" alt="tailwindmerge"> |<img src="https://camo.githubusercontent.com/04e1c9eeac89e2a758bbe60c01bf92332a45f7bac62c614aaed646f8fd58c19d/68747470733a2f2f70726574746965722e696f2f69636f6e2e706e67" width="48" height="48" alt="prettier"> |<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" width="48" height="48" alt="eslint">|
+|:---:|:---:|:---:|:---:|
+| **React Icons** | **Github Pages** | **Prettier** | **EsLint** |
 
-To learn more about Next.js, take a look at the following resources:
+## 🤝 Lets Connect
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<a href="https://linkedin.com/in/thesakshijaiswal" target="blank">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" width="40" height="40" alt="LinkedIn">
+</a>
+<a href="https://github.com/thesakshijaiswal" target="blank">
+  <img src="https://devicon-website.vercel.app/api/github/original.svg?color=%23F67000" width="40" height="40" alt="GitHub">
+</a>
+<a href="https:/sakshi.is-cool.dev" target="blank">
+  <img src="https://raw.githubusercontent.com/thesakshijaiswal/thesakshijaiswal.github.io/da1bdb246fd74a8b76a5a06c1b692aa84816c8d5/public/Sakshi_Logo.svg" width="40" height="40" alt="Portfolio">
+</a>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+If you found this project useful or inspiring, please consider ⭐️ **starring the repo** to support the work!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the [MIT License](LICENSE).
+
+Crafted with ❤️
