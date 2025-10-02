@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import LogoBox from "@/components/LogoBox";
 import { HiAcademicCap } from "react-icons/hi2";
 import { educationData } from "@/data/educationData";
+import GlowLine from "@/components/GlowLine";
 
 export const metadata: Metadata = {
   title: "Education",
@@ -23,11 +24,10 @@ export default function EducationPage() {
       </p>
 
       <div className="relative mt-8">
-        <div className="absolute top-0 bottom-0 left-5 w-px bg-slate-300 dark:bg-gray-700" />
-
+        <GlowLine orientation="vertical" position="20px" />
         <ol className="space-y-8">
           {educationData.map((data) => (
-            <li key={data.id} className="relative pl-14">
+            <li key={data.id} className="relative pl-11">
               <div className="absolute top-6 left-2 flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-600">
                 <HiAcademicCap className="size-4" />
               </div>
