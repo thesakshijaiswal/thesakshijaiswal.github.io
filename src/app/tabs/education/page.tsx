@@ -3,6 +3,7 @@ import LogoBox from "@/components/LogoBox";
 import { HiAcademicCap } from "react-icons/hi2";
 import { educationData } from "@/data/educationData";
 import GlowLine from "@/components/GlowLine";
+import { GiAchievement } from "react-icons/gi";
 
 export const metadata: Metadata = {
   title: "Education",
@@ -47,8 +48,9 @@ export default function EducationPage() {
                     </span>
                   </div>
 
-                  <div className="text-xs text-gray-500 dark:text-gray-400">
-                    {data.score}
+                  <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+                    <GiAchievement className="size-4 text-orange-300" />
+                    <span>{data.score}</span>
                   </div>
                 </div>
               </LogoBox>
