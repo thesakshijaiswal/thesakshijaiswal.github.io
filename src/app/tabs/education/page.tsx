@@ -24,26 +24,31 @@ export default function EducationPage() {
       </p>
 
       <div className="relative mt-8">
-        <GlowLine orientation="vertical" position="20px" />
+        <GlowLine orientation="vertical" position="13px" />
         <ol className="space-y-8">
           {educationData.map((data) => (
-            <li key={data.id} className="relative pl-11">
-              <div className="absolute top-6 left-2 flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-600">
+            <li key={data.id} className="relative cursor-pointer pl-8 md:pl-10">
+              <div className="absolute top-6 left-0 flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-600">
                 <HiAcademicCap className="size-4" />
               </div>
-
               <LogoBox className="p-4">
                 <div className="space-y-1">
-                  <h2 className="text-sm font-medium">{data.name}</h2>
-
-                  <div className="flex flex-col justify-between text-sm text-gray-700 lg:flex-row dark:text-gray-400">
-                    <span>{data.degree}</span>
-                    <span>{data.location}</span>
+                  <div className="flex flex-wrap justify-between space-y-1 gap-x-4 text-sm text-gray-700 dark:text-gray-400">
+                    <h2 className="font-medium dark:text-pink-200/80">
+                      {data.name}
+                    </h2>
+                    <span>{data.duration}</span>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
-                    <span>{data.score}</span>
-                    <span>{data.duration}</span>
+                  <div className="flex flex-wrap justify-between gap-x-4 text-sm lg:space-y-1.5">
+                    <span>{data.degree}</span>
+                    <span className="text-gray-700 dark:text-gray-400">
+                      {data.location}
+                    </span>
+                  </div>
+
+                  <div className="text-xs text-gray-500 dark:text-gray-400">
+                    {data.score}
                   </div>
                 </div>
               </LogoBox>

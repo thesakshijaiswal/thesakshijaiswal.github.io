@@ -82,7 +82,7 @@ const GlowLine: React.FC<GlowLineProps> = ({
 
       <div
         className={`absolute ${
-          isVertical ? "w-0.5 -ml-px" : "h-0.5 -mt-px"
+          isVertical ? "-ml-px w-0.5" : "-mt-px h-0.5"
         } ${gradientDirection} opacity-60`}
         style={{
           background: `linear-gradient(to ${
