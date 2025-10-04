@@ -25,7 +25,7 @@ export default function EducationPage() {
       </p>
 
       <div className="relative mt-8">
-        <GlowLine orientation="vertical" position="13px" />
+        <GlowLine orientation="vertical" position="13px" fallbackProgress={1} />
         <ol className="space-y-8">
           {educationData.map((data) => (
             <li key={data.id} className="relative cursor-pointer pl-8 md:pl-10">

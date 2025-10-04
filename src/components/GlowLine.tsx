@@ -5,6 +5,7 @@ interface GlowLineProps {
   orientation: "vertical" | "horizontal";
   position: string;
   className?: string;
+  fallbackProgress?: number;
 }
 
 interface GlowLayer {
@@ -17,6 +18,7 @@ const GlowLine: React.FC<GlowLineProps> = ({
   orientation,
   position,
   className = "",
+  fallbackProgress = 1,
 }) => {
   const isVertical = orientation === "vertical";
   const [progress, setProgress] = useState(0);
@@ -26,14 +28,25 @@ const GlowLine: React.FC<GlowLineProps> = ({
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight;
       const winHeight = window.innerHeight;
-      const scrolled = scrollTop / (docHeight - winHeight);
-      setProgress(scrolled);
+      const scrollable = docHeight - winHeight;
+
+      if (scrollable > 0) {
+        const scrolled = scrollTop / scrollable;
+        setProgress(scrolled);
+      } else {
+        setProgress(fallbackProgress);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [fallbackProgress]);
 
   const containerClasses = isVertical
     ? "absolute w-px h-full"
