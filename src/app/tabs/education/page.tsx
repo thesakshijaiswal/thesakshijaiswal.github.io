@@ -27,6 +27,20 @@ export default function EducationPage() {
       <div className="relative mt-8">
         <EducationCard />
       </div>
+
+      <div className="mt-8">
+        <h3 className="text-lg font-bold">Academic Achievements</h3>
+
+        <div className="mt-6 grid h-96 grid-cols-4 grid-rows-4 gap-4">
+          <LogoBox className="col-span-2 row-span-2">1</LogoBox>
+          <LogoBox className="col-span-2 col-start-1 row-span-2 row-start-3">
+            2
+          </LogoBox>
+          <LogoBox className="col-span-2 col-start-3 row-span-4 row-start-1">
+            3
+          </LogoBox>
+        </div>
+      </div>
     </div>
   );
 }
