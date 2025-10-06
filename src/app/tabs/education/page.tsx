@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import LogoBox from "@/components/LogoBox";
 import { HiAcademicCap } from "react-icons/hi2";
 import EducationCard from "@/components/EducationCard";
+import { GoTrophy } from "react-icons/go";
+import { LiaMedalSolid } from "react-icons/lia";
+import { IoSettingsOutline } from "react-icons/io5";
 
 export const metadata: Metadata = {
   title: "Education",
@@ -32,12 +35,23 @@ export default function EducationPage() {
         <h3 className="text-lg font-bold">Academic Achievements</h3>
 
         <div className="mt-6 grid h-96 grid-cols-4 grid-rows-4 gap-4">
-          <LogoBox className="col-span-2 row-span-2">1</LogoBox>
-          <LogoBox className="col-span-2 col-start-1 row-span-2 row-start-3">
-            2
+          <LogoBox className="col-span-2 row-span-2 place-content-center p-3 md:p-5">
+            <GoTrophy className="size-9" />
+            <div className="mt-3 text-sm font-medium sm:text-base">
+              2nd Rank in Final Year University Exams
+            </div>
           </LogoBox>
-          <LogoBox className="col-span-2 col-start-3 row-span-4 row-start-1">
-            3
+          <LogoBox className="col-span-2 col-start-1 row-span-2 row-start-3 place-content-center p-3 md:p-5">
+            <IoSettingsOutline className="size-9" />
+            <div className="mt-3 text-sm font-medium sm:text-base">
+              National Tech Expo Winner (FundVerse)
+            </div>
+          </LogoBox>
+          <LogoBox className="col-span-2 col-start-3 row-span-4 row-start-1 place-content-center p-3 md:p-5">
+            <LiaMedalSolid className="size-11" />
+            <div className="mt-3 text-sm font-medium sm:text-base">
+              Consistent Academic Excellence Award
+            </div>
           </LogoBox>
         </div>
       </div>
