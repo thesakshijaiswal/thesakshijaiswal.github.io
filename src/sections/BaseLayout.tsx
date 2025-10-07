@@ -9,8 +9,8 @@ export default function BaseLayout({
     <section className="mx-auto flex max-w-5xl gap-14 md:px-4">
       <Navbar />
       <div className="min-w-0 flex-1 md:-mt-16">
-        <main className="flex-1">
-          <div className="relative divide-y border border-gray-300/70 dark:border-white/20 rounded-none border-x-0 shadow-2xl md:rounded-xl md:border-x bg-white dark:bg-[#242533]">
+        <main className="flex-1" aria-label="Portfolio content area">
+          <div className="relative divide-y rounded-none border border-x-0 border-gray-300/70 bg-white shadow-2xl md:rounded-xl md:border-x dark:border-white/20 dark:bg-[#242533]">
             <div className="p-6">{children}</div>
           </div>
         </main>
