@@ -64,11 +64,11 @@ export default function Navbar() {
                 className={`flex items-center gap-3 rounded-md px-3 py-2.5 font-medium transition-all duration-200 ${
                   isActive
                     ? "bg-blue-500 text-gray-100"
-                    : "text-gray-600 hover:text-gray-950 dark:hover:text-gray-100 dark:text-gray-300 hover:bg-gray-100/70 dark:hover:bg-[#2d2f3e]"
+                    : "text-gray-600 hover:bg-gray-100/70 hover:text-gray-950 dark:text-gray-300 dark:hover:bg-[#2d2f3e] dark:hover:text-gray-100"
                 }`}
               >
                 <IconComponent
-                  className={`text-base shrink-0 ${
+                  className={`shrink-0 text-base ${
                     isActive
                       ? "text-gray-100"
                       : "text-gray-500 dark:text-gray-400"

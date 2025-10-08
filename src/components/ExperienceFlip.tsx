@@ -8,7 +8,7 @@ export default function ExperienceFlip() {
   return (
     <LogoFlipDeck
       items={[
-        <LogoItem key="react" className="bg-red-50 dark:bg-white pl-2 pr-1.5">
+        <LogoItem key="react" className="bg-red-50 pr-1.5 pl-2 dark:bg-white">
           <Image src={Logo1} alt="ansrsouce" />
         </LogoItem>,
         <LogoItem key="nextjs" className="overflow-hidden">

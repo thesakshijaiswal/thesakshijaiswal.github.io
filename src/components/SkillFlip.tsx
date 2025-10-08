@@ -16,7 +16,7 @@ export default function SkillFlip() {
         </LogoItem>,
         <LogoItem
           key="nextjs"
-          className="bg-black dark:bg-white dark:text-neutral-900 text-white"
+          className="bg-black text-white dark:bg-white dark:text-neutral-900"
         >
           <SiNextdotjs />
         </LogoItem>,
@@ -28,7 +28,7 @@ export default function SkillFlip() {
         </LogoItem>,
         <LogoItem
           key="typescript"
-          className="dark:text-blue-400 text-neutral-900 bg-blue-400 dark:bg-white"
+          className="bg-blue-400 text-neutral-900 dark:bg-white dark:text-blue-400"
         >
           <SiTypescript />
         </LogoItem>,

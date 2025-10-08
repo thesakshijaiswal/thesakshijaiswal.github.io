@@ -37,8 +37,8 @@ export default function Button({
     href?.endsWith(".pdf") || href?.endsWith(".doc") || href?.endsWith(".txt");
 
   return (
-    <div className="relative flex w-full sm:w-auto group">
-      <div className="absolute inset-0 duration-1000 dark:opacity-45 opacity-60 transition-all bg-gradient-to-r from-indigo-500 via-pink-300 to-indigo-500 rounded-xl blur-lg filter dark:group-hover:opacity-65 group-hover:duration-200"></div>
+    <div className="group relative flex w-full sm:w-auto">
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 via-pink-300 to-indigo-500 opacity-60 blur-lg filter transition-all duration-1000 group-hover:duration-200 dark:opacity-45 dark:group-hover:opacity-65"></div>
 
       {href ? (
         isFileLink ? (

@@ -26,7 +26,8 @@ body {
 }
 
 .hero-gradient {
-  background: radial-gradient(
+  background:
+    radial-gradient(
       72.52% 42.88% at 73.32% 82.63%,
       rgba(170, 220, 189, 0.24) 0%,
       rgba(255, 255, 255, 0) 100%
@@ -45,6 +46,14 @@ body {
 }
 
 .hero-tagline {
-  font-family: IBMPlexMono, ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, Liberation Mono, Courier New, monospace;
+  font-family:
+    IBMPlexMono,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
 }

@@ -16,18 +16,18 @@ export default function AboutPage() {
     <div className="relative flex">
       <GlowLine orientation="vertical" position="0px" />
       <div className="ml-8">
-        <div className="flex mb-10 items-center gap-4">
-          <LogoBox className="overflow-hidden size-20 place-content-baseline">
+        <div className="mb-10 flex items-center gap-4">
+          <LogoBox className="size-20 place-content-baseline overflow-hidden">
             <Image src={Avatar} alt="Profile picture" width={80} height={80} />
           </LogoBox>
           <h1 className="text-2xl font-bold">Who Am I?</h1>
         </div>
-        <div className="mt-5 flex gap-2 flex-wrap items-center">
+        <div className="mt-5 flex flex-wrap items-center gap-2">
           <Tag
             icon={
               <MdOutlineOfflineBolt
                 size={17}
-                className="dark:text-emerald-300 text-emerald-500"
+                className="text-emerald-500 dark:text-emerald-300"
               />
             }
             label="Available for work"
@@ -37,7 +37,7 @@ export default function AboutPage() {
             icon={
               <MdOutlineCalendarToday
                 size={14}
-                className="dark:text-pink-300 text-pink-500/70"
+                className="text-pink-500/70 dark:text-pink-300"
               />
             }
             label="2+ Year of Experience"
@@ -47,7 +47,7 @@ export default function AboutPage() {
             icon={
               <GrLocation
                 size={15}
-                className="dark:text-orange-300 text-orange-400"
+                className="text-orange-400 dark:text-orange-300"
               />
             }
             label="Maharashtra, India"
@@ -55,7 +55,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="mt-4 text-gray-600 dark:text-gray-500 space-y-6 leading-relaxed text-sm md:text-base">
+        <div className="mt-4 space-y-6 text-sm leading-relaxed text-gray-600 md:text-base dark:text-gray-500">
           <p>
             I&apos;m the developer who turns ideas into web experiences people
             enjoy using. My mission is to build applications that look great,
@@ -80,7 +80,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="flex gap-3 mt-7 flex-wrap">
+        <div className="mt-7 flex flex-wrap gap-3">
           <Button
             text="Get my Resume"
             icon={<MdOutlineCloudDownload size={18} />}

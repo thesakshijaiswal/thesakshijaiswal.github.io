@@ -49,7 +49,7 @@ export const LogoFlipDeck: React.FC<LogoFlipDeckProps> = ({ items }) => {
           initial={{ rotateX: "0deg" }}
           animate={{ rotateX: "0deg" }}
           exit={{ rotateX: "-180deg" }}
-          className="absolute left-1/2 top-1/2"
+          className="absolute top-1/2 left-1/2"
         >
           {items[index % items.length]}
         </motion.div>
@@ -70,7 +70,7 @@ export const LogoFlipDeck: React.FC<LogoFlipDeckProps> = ({ items }) => {
             duration: TRANSITION_DURATION_IN_SECS,
             ease: "easeInOut",
           }}
-          className="absolute left-1/2 top-1/2"
+          className="absolute top-1/2 left-1/2"
         >
           {items[index % items.length]}
         </motion.div>
@@ -80,7 +80,7 @@ export const LogoFlipDeck: React.FC<LogoFlipDeckProps> = ({ items }) => {
         style={{
           transform: "translateZ(1px)",
         }}
-        className="absolute left-0 right-0 top-1/2 z-[999999999] -translate-y-1/2 border-t-2 dark:border-neutral-800 border-white"
+        className="absolute top-1/2 right-0 left-0 z-[999999999] -translate-y-1/2 border-t-2 border-white dark:border-neutral-800"
       />
     </div>
   );

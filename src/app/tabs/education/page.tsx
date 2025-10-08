@@ -18,7 +18,6 @@ export default function EducationPage() {
       className="sm:ml-8"
       aria-labelledby="my-academic-path"
       role="tabpanel"
-      tabIndex={0}
     >
       <header className="mb-10 flex items-center gap-4">
         <LogoBox className="size-20 place-content-center">

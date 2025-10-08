@@ -17,14 +17,14 @@ export default function SkillsPage() {
   return (
     <div className="relative flex">
       <div className="sm:ml-8">
-        <div className="flex mb-10 items-center gap-4">
-          <LogoBox className="place-content-center size-20">
+        <div className="mb-10 flex items-center gap-4">
+          <LogoBox className="size-20 place-content-center">
             <SkillFlip />
           </LogoBox>
           <h1 className="text-2xl font-bold">My SuperPowers</h1>
         </div>
 
-        <div className="mt-4 text-gray-600 dark:text-gray-500 space-y-6 leading-relaxed text-sm md:text-base">
+        <div className="mt-4 space-y-6 text-sm leading-relaxed text-gray-600 md:text-base dark:text-gray-500">
           <p>
             Every creator has their toolkit, but I like to think of mine as
             superpowers. From weaving clean UIs to powering up backends, these

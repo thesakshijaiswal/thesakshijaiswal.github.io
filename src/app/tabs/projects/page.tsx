@@ -12,16 +12,19 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <>
-      <div className="relative flex">
-        <div className="sm:ml-8">
-          <div className="flex mb-10 items-center gap-4">
-            <LogoBox className="place-content-center size-20">
-              <SkillFlip />
-            </LogoBox>
-            <h1 className="text-2xl font-bold">Things I&apos;ve Built</h1>
-          </div>
+      <section
+        className="sm:ml-8"
+        aria-labelledby="my-projects"
+        role="tabpanel"
+      >
+        <div className="mb-10 flex items-center gap-4">
+          <LogoBox className="size-20 place-content-center">
+            <SkillFlip />
+          </LogoBox>
+          <h1 className="text-2xl font-bold">Things I&apos;ve Built</h1>
         </div>
-      </div>
+      </section>
+
       <WIP />
     </>
   );

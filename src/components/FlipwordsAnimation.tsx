@@ -70,7 +70,7 @@ export const FlipWords = ({
 
   return (
     <div
-      className={`inline-block align-middle overflow-hidden h-[1.2em] leading-none ${className}`}
+      className={`inline-block h-[1.2em] overflow-hidden align-middle leading-none ${className}`}
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -85,7 +85,7 @@ export const FlipWords = ({
             <motion.span
               key={`${char}-${i}`}
               variants={letterVariants}
-              className="inline-block [backface-visibility:hidden] will-change-transform translate-z-0"
+              className="inline-block translate-z-0 will-change-transform [backface-visibility:hidden]"
             >
               {char}
             </motion.span>
@@ -111,7 +111,7 @@ const FlipwordsAnimation = () => {
     <motion.div
       layout
       transition={{ type: "spring", stiffness: 400, damping: 30 }}
-      className="inline-block -mb-1"
+      className="-mb-1 inline-block"
     >
       <FlipWords words={phrases} duration={3000} />
     </motion.div>

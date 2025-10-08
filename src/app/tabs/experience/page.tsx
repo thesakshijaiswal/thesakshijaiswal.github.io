@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <div className="sm:ml-8">
-      <div className="flex mb-10 items-center gap-4">
-        <LogoBox className="place-content-center size-20">
+      <div className="mb-10 flex items-center gap-4">
+        <LogoBox className="size-20 place-content-center">
           <ExperienceFlip />
         </LogoBox>
         <h1 className="text-2xl font-bold">My Experience</h1>

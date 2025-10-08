@@ -7,7 +7,7 @@ export default function ThemeToggle() {
   const { theme, setTheme, mounted } = useTheme();
 
   if (!mounted) {
-    return <div className="p-2 w-6 h-6"></div>;
+    return <div className="h-6 w-6 p-2"></div>;
   }
 
   const themes = ["light", "dark", "system"] as const;
@@ -32,7 +32,7 @@ export default function ThemeToggle() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.2 }}
-      className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+      className="rounded-lg bg-white/5 p-2 transition-colors hover:bg-white/10"
       onClick={cycleTheme}
       aria-label={`Current theme: ${theme}. Click to cycle themes.`}
       title={`Current: ${theme}. Click to cycle.`}
@@ -43,7 +43,7 @@ export default function ThemeToggle() {
         animate={{ rotate: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
-        <Icon className="w-3 h-3 md:w-5 md:h-5" />
+        <Icon className="h-3 w-3 md:h-5 md:w-5" />
       </motion.div>
     </motion.button>
   );

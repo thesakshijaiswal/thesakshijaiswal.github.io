@@ -28,19 +28,19 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
   const shadowY = useTransform(rotateX, [-30, 30], [35, 5]);
   const boxShadow = useTransform(
     [shadowX, shadowY],
-    ([x, y]) => `${x}px ${y}px 30px rgba(0,0,0,0.25)`
+    ([x, y]) => `${x}px ${y}px 30px rgba(0,0,0,0.25)`,
   );
 
   const background = useTransform(
     [glowX, glowY],
     ([x, y]) =>
-      `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.25), transparent)`
+      `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.25), transparent)`,
   );
 
   const borderGloss = useTransform(
     [glowX, glowY],
     ([x, y]) =>
-      `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.7), transparent 70%)`
+      `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.7), transparent 70%)`,
   );
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -69,19 +69,11 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
   };
 
   return (
-    <div className="w-full h-full [perspective:1000px] flex justify-center">
+    <div className="flex h-full w-full justify-center [perspective:1000px]">
       <motion.div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="
-          relative group cursor-pointer
-          w-full aspect-[3/4] max-w-sm md:max-w-md lg:max-w-lg
-          flex flex-col items-center justify-center
-          rounded-xl backdrop-blur-md
-          border border-gray-200 dark:border-white/10
-          bg-white/10 dark:bg-white/5
-          overflow-hidden touch-manipulation select-none px-2
-        "
+        className="group relative flex aspect-[3/4] w-full max-w-sm cursor-pointer touch-manipulation flex-col items-center justify-center overflow-hidden rounded-xl border border-gray-200 bg-white/10 px-2 backdrop-blur-md select-none md:max-w-md lg:max-w-lg dark:border-white/10 dark:bg-white/5"
         style={{ rotateX, rotateY, boxShadow }}
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -89,7 +81,7 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
         {isHovered && (
           <>
             <motion.div
-              className="absolute inset-0 rounded-xl pointer-events-none"
+              className="pointer-events-none absolute inset-0 rounded-xl"
               style={{ background }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -98,7 +90,7 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
             />
 
             <motion.div
-              className="absolute inset-0 rounded-xl pointer-events-none"
+              className="pointer-events-none absolute inset-0 rounded-xl"
               style={{
                 padding: "2px",
                 background: borderGloss,
@@ -127,7 +119,7 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
         </motion.div>
 
         <motion.div
-          className="relative z-10 px-1 text-[clamp(0.6rem,2vw,0.9rem)] font-medium text-center leading-snug text-gray-900 dark:text-white"
+          className="relative z-10 px-1 text-center text-[clamp(0.6rem,2vw,0.9rem)] leading-snug font-medium text-gray-900 dark:text-white"
           animate={{ y: isHovered ? -2 : 0 }}
           transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
