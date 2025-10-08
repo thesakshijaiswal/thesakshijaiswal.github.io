@@ -13,7 +13,11 @@ import { GrLocation } from "react-icons/gr";
 import { HiArrowRight } from "react-icons/hi";
 export default function AboutPage() {
   return (
-    <div className="relative flex">
+    <section
+      className="relative flex"
+      aria-labelledby="about-me"
+      role="tabpanel"
+    >
       <GlowLine orientation="vertical" position="0px" />
       <div className="ml-8">
         <div className="mb-10 flex items-center gap-4">
@@ -95,6 +99,6 @@ export default function AboutPage() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

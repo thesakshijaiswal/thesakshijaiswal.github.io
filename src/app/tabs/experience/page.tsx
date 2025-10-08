@@ -11,7 +11,11 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   return (
-    <div className="sm:ml-8">
+    <section
+      className="sm:ml-8"
+      aria-labelledby="my-experience"
+      role="tabpanel"
+    >
       <div className="mb-10 flex items-center gap-4">
         <LogoBox className="size-20 place-content-center">
           <ExperienceFlip />
@@ -29,6 +33,6 @@ export default function ExperiencePage() {
       <div className="mt-5 space-y-8">
         <ExperienceCard />
       </div>
-    </div>
+    </section>
   );
 }
