@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects, type ProjectData } from "@/data/projectData";
+import { PiStarFour } from "react-icons/pi";
 
 export default function ProjectCards() {
   const [selectedCard, setSelectedCard] = useState<ProjectData | null>(null);
@@ -48,8 +49,8 @@ export default function ProjectCards() {
                 layoutId={`text-${project.id}`}
                 className="absolute top-6 left-6"
               >
-                <span className="text-sm font-medium text-white/80">
-                  {project.category}
+                <span className="text-white">
+                  <PiStarFour />
                 </span>
                 <h3 className="mt-2 max-w-md text-2xl leading-tight font-bold text-white sm:text-3xl">
                   {project.title}
@@ -91,8 +92,8 @@ export default function ProjectCards() {
                 layoutId={`text-${selectedCard.id}`}
                 className="absolute top-6 left-6 z-10"
               >
-                <span className="text-sm font-medium text-white/80">
-                  {selectedCard.category}
+                <span className="text-white">
+                  <PiStarFour />
                 </span>
                 <h3 className="mt-2 max-w-xl text-3xl leading-tight font-bold text-white sm:text-4xl">
                   {selectedCard.title}
