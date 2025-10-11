@@ -17,42 +17,47 @@ export default function ProjectCards() {
 
   return (
     <div className="relative">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        {projects.map((project) => (
-          <motion.div
-            key={project.id}
-            layoutId={`card-${project.id}`}
-            onClick={() => handleCardClick(project)}
-            whileHover={!selectedCard ? { scale: 1.02 } : {}}
-            animate={{
-              opacity: selectedCard && selectedCard.id !== project.id ? 0.4 : 1,
-            }}
-            transition={{ duration: 0.35, ease: [0.25, 1, 0.3, 1] }}
-            className="relative h-96 cursor-pointer overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl"
-          >
-            <motion.img
-              layoutId={`image-${project.id}`}
-              src={project.image}
-              alt={project.title}
-              className="h-full w-full object-cover"
-            />
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {projects.map((project) => {
+          const isInactive = selectedCard && selectedCard.id !== project.id;
+          return (
             <motion.div
-              layoutId={`overlay-${project.id}`}
-              className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
-            />
-            <motion.div
-              layoutId={`text-${project.id}`}
-              className="absolute top-6 left-6"
+              key={project.id}
+              layoutId={`card-${project.id}`}
+              onClick={() => handleCardClick(project)}
+              whileHover={!selectedCard ? { scale: 1.02 } : {}}
+              animate={{ opacity: isInactive ? 0.5 : 1 }}
+              transition={{ duration: 0.3, ease: [0.25, 1, 0.3, 1] }}
+              className={`relative h-80 overflow-hidden rounded-3xl shadow-lg transition-shadow duration-300 sm:h-96 ${
+                selectedCard
+                  ? "cursor-default"
+                  : "cursor-pointer hover:shadow-2xl"
+              }`}
             >
-              <span className="text-sm font-medium text-white/80">
-                {project.category}
-              </span>
-              <h3 className="mt-2 max-w-md text-3xl leading-tight font-bold text-white">
-                {project.title}
-              </h3>
+              <motion.img
+                layoutId={`image-${project.id}`}
+                src={project.image}
+                alt={project.title}
+                className="h-full w-full object-cover will-change-transform"
+              />
+              <motion.div
+                layoutId={`overlay-${project.id}`}
+                className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
+              />
+              <motion.div
+                layoutId={`text-${project.id}`}
+                className="absolute top-6 left-6"
+              >
+                <span className="text-sm font-medium text-white/80">
+                  {project.category}
+                </span>
+                <h3 className="mt-2 max-w-md text-2xl leading-tight font-bold text-white sm:text-3xl">
+                  {project.title}
+                </h3>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
 
       <AnimatePresence>
@@ -62,24 +67,21 @@ export default function ProjectCards() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
             onClick={handleBackdropClick}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm sm:p-8"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-3 backdrop-blur-sm sm:p-6"
           >
             <motion.div
               layoutId={`card-${selectedCard.id}`}
-              transition={{
-                duration: 0.6,
-                ease: [0.25, 1, 0.3, 1],
-              }}
-              className="relative w-full max-w-4xl cursor-pointer overflow-hidden rounded-3xl shadow-2xl"
+              transition={{ duration: 0.5, ease: [0.25, 1, 0.3, 1] }}
+              className="relative w-full max-w-4xl cursor-default overflow-hidden rounded-3xl shadow-2xl"
               onClick={() => handleCardClick(selectedCard)}
             >
               <motion.img
                 layoutId={`image-${selectedCard.id}`}
                 src={selectedCard.image}
                 alt={selectedCard.title}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover will-change-transform"
               />
               <motion.div
                 layoutId={`overlay-${selectedCard.id}`}
@@ -97,16 +99,16 @@ export default function ProjectCards() {
                 </h3>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-                className="relative z-20 mt-80 bg-gray-900 p-6 text-white sm:p-8"
+                exit={{ opacity: 0, y: 25 }}
+                transition={{ delay: 0.35, duration: 0.35 }}
+                className="relative z-20 mt-72 bg-gray-900 p-5 text-white sm:mt-80 sm:p-8"
               >
-                <p className="mb-4 text-base leading-relaxed text-gray-300 sm:text-lg">
+                <p className="mb-3 text-sm leading-relaxed text-gray-300 sm:text-lg">
                   {selectedCard.description}
                 </p>
-                <p className="text-sm leading-relaxed text-gray-400 sm:text-base">
+                <p className="text-xs leading-relaxed text-gray-400 sm:text-base">
                   {selectedCard.details}
                 </p>
               </motion.div>
