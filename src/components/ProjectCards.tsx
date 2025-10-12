@@ -49,9 +49,9 @@ export default function ProjectCards() {
                 layoutId={`text-${project.id}`}
                 className="absolute top-6 left-6"
               >
-                <span className="text-white">
-                  <PiStarFour />
-                </span>
+                <div className="w-fit rounded-full bg-black/20 p-2 text-white">
+                  <PiStarFour className="transition-transform duration-300 ease-in hover:rotate-180" />
+                </div>
                 <h3 className="mt-2 max-w-md text-3xl leading-tight font-bold text-white sm:text-lg md:text-xl lg:text-3xl">
                   {project.title}
                 </h3>
@@ -92,9 +92,9 @@ export default function ProjectCards() {
                 layoutId={`text-${selectedCard.id}`}
                 className="absolute top-6 left-6 z-10"
               >
-                <span className="text-white">
-                  <PiStarFour />
-                </span>
+                <div className="w-fit rounded-full bg-black/20 p-2 text-white">
+                  <PiStarFour className="transition-transform duration-300 ease-in hover:rotate-180" />
+                </div>
                 <h3 className="mt-2 max-w-xl text-3xl leading-tight font-bold text-white sm:text-4xl">
                   {selectedCard.title}
                 </h3>
