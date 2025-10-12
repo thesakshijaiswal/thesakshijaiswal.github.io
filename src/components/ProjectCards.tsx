@@ -52,7 +52,7 @@ export default function ProjectCards() {
                 <span className="text-white">
                   <PiStarFour />
                 </span>
-                <h3 className="mt-2 max-w-md text-2xl leading-tight font-bold text-white sm:text-3xl">
+                <h3 className="mt-2 max-w-md text-3xl leading-tight font-bold text-white sm:text-lg md:text-xl lg:text-3xl">
                   {project.title}
                 </h3>
               </motion.div>
@@ -106,12 +106,22 @@ export default function ProjectCards() {
                 transition={{ delay: 0.35, duration: 0.35 }}
                 className="relative z-20 mt-72 bg-gray-900 p-5 text-white sm:mt-80 sm:p-8"
               >
-                <p className="mb-3 text-sm leading-relaxed text-gray-300 sm:text-lg">
+                <p className="mb-5 text-sm leading-relaxed text-gray-300 sm:text-lg">
                   {selectedCard.description}
                 </p>
-                <p className="text-xs leading-relaxed text-gray-400 sm:text-base">
-                  {selectedCard.details}
-                </p>
+                <div className="flex flex-wrap gap-2">
+                  {selectedCard.skills.map((skill) => (
+                    <motion.div
+                      key={skill.label}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      className="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-200 backdrop-blur-md sm:text-sm"
+                    >
+                      {skill.icon}
+                      <span>{skill.label}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </motion.div>
           </motion.div>
