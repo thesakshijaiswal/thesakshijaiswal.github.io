@@ -20,7 +20,7 @@ export default function ProjectCards() {
   }, [selectedCard]);
 
   return (
-    <div className="relative">
+    <div className="relative cursor-pointer">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         {projects.map((project) => {
           const isInactive = selectedCard && selectedCard.id !== project.id;
@@ -32,32 +32,31 @@ export default function ProjectCards() {
               whileHover={!selectedCard ? { scale: 1.02 } : {}}
               animate={{ opacity: isInactive ? 0.5 : 1 }}
               transition={{ duration: 0.3, ease: [0.25, 1, 0.3, 1] }}
-              className={`relative h-80 overflow-hidden rounded-3xl shadow-lg transition-shadow duration-300 sm:h-96 ${
-                selectedCard
-                  ? "cursor-default"
-                  : "cursor-pointer hover:shadow-2xl"
-              }`}
+              className="group relative h-80 overflow-hidden rounded-3xl shadow-lg transition-shadow duration-300 sm:h-96"
             >
               <motion.img
                 layoutId={`image-${project.id}`}
                 src={project.image}
                 alt={project.title}
-                className="h-full w-full object-cover will-change-transform"
+                className="h-full w-full object-cover"
               />
               <motion.div
                 layoutId={`overlay-${project.id}`}
-                className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/50 to-transparent"
               />
               <motion.div
                 layoutId={`text-${project.id}`}
                 className="absolute top-6 left-6"
               >
                 <div className="w-fit rounded-full bg-black/20 p-2 text-white">
-                  <PiStarFour className="transition-transform duration-300 ease-in hover:rotate-180" />
+                  <PiStarFour className="transition-transform duration-300 ease-in group-hover:rotate-180" />
                 </div>
-                <h3 className="mt-2 max-w-md text-3xl leading-tight font-bold text-white sm:text-lg md:text-xl lg:text-3xl">
+                <h3 className="mt-6 max-w-md text-3xl leading-tight font-bold text-white sm:text-lg md:text-xl lg:text-3xl">
                   {project.title}
                 </h3>
+                <p className="mt-2 line-clamp-2 max-w-xs overflow-hidden text-xs text-ellipsis text-white/90">
+                  {project.description}
+                </p>
               </motion.div>
             </motion.div>
           );
@@ -83,7 +82,7 @@ export default function ProjectCards() {
                   ease: [0.32, 0.72, 0, 1],
                   layout: { duration: 0.4 },
                 }}
-                className="relative w-full max-w-4xl cursor-default overflow-hidden rounded-3xl shadow-2xl"
+                className="relative w-full max-w-4xl overflow-hidden rounded-3xl shadow-2xl"
               >
                 <div className="relative h-64 overflow-hidden sm:h-80">
                   <motion.img
