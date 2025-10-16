@@ -23,7 +23,7 @@ export default function ProjectModal({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
           onClick={onClose}
-          className="fixed inset-0 z-50 overflow-y-auto bg-black/40 p-3 backdrop-blur-sm sm:p-6"
+          className="fixed inset-0 z-50 cursor-pointer overflow-y-auto bg-black/40 p-3 backdrop-blur-sm sm:p-6"
         >
           <div className="flex min-h-full items-center justify-center py-6">
             <motion.div

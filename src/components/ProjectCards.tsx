@@ -48,7 +48,7 @@ export default function ProjectCards() {
                 stiffness: isTouch ? 220 : 280,
                 damping: isTouch ? 24 : 20,
               }}
-              className="group relative h-80 overflow-hidden rounded-3xl shadow-lg sm:h-96"
+              className="group relative h-80 cursor-pointer overflow-hidden rounded-3xl shadow-lg"
               style={{ willChange: "transform" }}
             >
               <motion.img
