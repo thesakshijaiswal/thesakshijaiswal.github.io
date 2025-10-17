@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { PiStarFour } from "react-icons/pi";
 import { type ProjectData } from "@/data/projectData";
+import { FiGithub, FiGlobe } from "react-icons/fi";
 
 interface ProjectModalProps {
   selectedCard: ProjectData | null;
@@ -50,11 +51,22 @@ export default function ProjectModal({
                   style={{ willChange: "transform" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute top-6 left-6 z-10">
+                <div className="absolute inset-x-6 top-6 z-10 flex justify-between">
                   <div className="w-fit rounded-full bg-black/20 p-2 text-white">
-                    <PiStarFour />
+                    <PiStarFour className="size-5" />
                   </div>
-                  <h3 className="mt-2 max-w-xl text-3xl leading-tight font-bold text-white sm:text-4xl">
+                  <div className="flex gap-3">
+                    <div className="w-fit rounded-full bg-black/20 p-2 text-white">
+                      <FiGithub className="size-5" />
+                    </div>
+                    <div className="w-fit rounded-full bg-black/20 p-2 text-white">
+                      <FiGlobe className="size-5" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="">
+                  <h3 className="absolute top-16 left-6 z-10 mt-2 max-w-xl text-3xl leading-tight font-bold text-white sm:text-4xl">
                     {selectedCard.title}
                   </h3>
                 </div>
