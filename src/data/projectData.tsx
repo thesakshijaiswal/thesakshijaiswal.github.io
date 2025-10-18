@@ -22,6 +22,8 @@ export interface ProjectData {
   image: string;
   description: string;
   skills: SkillTag[];
+  repo: string;
+  live: string;
 }
 
 export const projects: ProjectData[] = [
@@ -55,6 +57,8 @@ export const projects: ProjectData[] = [
         label: "Tailwind CSS",
       },
     ],
+    repo: "https://github.com/thesakshijaiswal/be-commerce",
+    live: "https://be-commerce-q7nw.onrender.com/",
   },
   {
     id: 2,
@@ -81,6 +85,8 @@ export const projects: ProjectData[] = [
         label: "Node.js",
       },
     ],
+    repo: "https://github.com/thesakshijaiswal/rewarder",
+    live: "https://rewarder-dashboard.onrender.com/",
   },
   {
     id: 3,
@@ -103,6 +109,8 @@ export const projects: ProjectData[] = [
         label: "Node.js",
       },
     ],
+    repo: "https://github.com/thekiranmahajan/FundVerse",
+    live: "https://fundverse-by-us.vercel.app",
   },
   {
     id: 4,
@@ -127,5 +135,7 @@ export const projects: ProjectData[] = [
       },
       { icon: <FaFigma size={13} className="text-pink-400" />, label: "Figma" },
     ],
+    repo: "https://github.com/thesakshijaiswal/fusion",
+    live: "https://fusion-dashboard-ten.vercel.app/",
   },
 ];

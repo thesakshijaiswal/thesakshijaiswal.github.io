@@ -51,25 +51,36 @@ export default function ProjectModal({
                   style={{ willChange: "transform" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute inset-x-6 top-6 z-10 flex justify-between">
+                <div className="absolute inset-x-6 top-6 z-10 flex items-center justify-between">
                   <div className="w-fit rounded-full bg-black/20 p-2 text-white">
                     <PiStarFour className="size-5" />
                   </div>
                   <div className="flex gap-3">
-                    <div className="w-fit rounded-full bg-black/20 p-2 text-white">
+                    <a
+                      href={selectedCard.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-fit rounded-full bg-black/20 p-2 text-white transition hover:bg-black/40"
+                    >
                       <FiGithub className="size-5" />
-                    </div>
-                    <div className="w-fit rounded-full bg-black/20 p-2 text-white">
+                    </a>
+
+                    <a
+                      href={selectedCard.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-fit rounded-full bg-black/20 p-2 text-white transition hover:bg-black/40"
+                    >
                       <FiGlobe className="size-5" />
-                    </div>
+                    </a>
                   </div>
                 </div>
 
-                <div className="">
-                  <h3 className="absolute top-16 left-6 z-10 mt-2 max-w-xl text-3xl leading-tight font-bold text-white sm:text-4xl">
-                    {selectedCard.title}
-                  </h3>
-                </div>
+                <h3 className="absolute top-16 left-6 z-10 mt-2 max-w-xl text-3xl leading-tight font-bold text-white sm:text-4xl">
+                  {selectedCard.title}
+                </h3>
               </div>
 
               <motion.div
@@ -82,6 +93,7 @@ export default function ProjectModal({
                 <p className="mb-5 text-sm leading-relaxed text-gray-300 sm:text-lg">
                   {selectedCard.description}
                 </p>
+
                 <div className="flex flex-wrap gap-2">
                   {selectedCard.skills.map((skill) => (
                     <motion.div
