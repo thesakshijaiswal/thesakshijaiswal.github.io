@@ -61,7 +61,7 @@ export default function ProjectCards() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
               <div className="absolute inset-x-6 top-6 z-10 flex items-center justify-between">
                 <div className="w-fit rounded-full bg-black/20 p-2 text-white">
-                  <PiStarFour className="size-5 md:size-4 lg:size-5" />
+                  <PiStarFour className="size-5 transition-transform duration-300 ease-in group-hover:rotate-180 md:size-4 lg:size-5" />
                 </div>
                 <div className="flex gap-3">
                   <a
