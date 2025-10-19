@@ -24,6 +24,7 @@ export interface ProjectData {
   skills: SkillTag[];
   repo: string;
   live: string;
+  details: String[];
 }
 
 export const projects: ProjectData[] = [
@@ -59,6 +60,12 @@ export const projects: ProjectData[] = [
     ],
     repo: "https://github.com/thesakshijaiswal/be-commerce",
     live: "https://be-commerce-q7nw.onrender.com/",
+    details: [
+      "BE-Commerce started as my attempt to build a complete online shopping experience from scratch, something that went beyond static product listings. I wanted users to browse, review, and actually make purchases in real time.",
+      "I designed a clean, responsive UI with Tailwind CSS that feels natural on any device. The product pages, category filters, and cart flow were all built with a focus on smooth transitions and accessibility.",
+      "On the backend, I created a secure authentication system using JWT and bcrypt, ensuring users could safely register, log in, and manage their profiles.",
+      "Built on the MERN stack with Express and MongoDB, the system handles products, users, and images efficiently through a well structured REST API and Cloudinary integration.",
+    ],
   },
   {
     id: 2,
@@ -87,6 +94,12 @@ export const projects: ProjectData[] = [
     ],
     repo: "https://github.com/thesakshijaiswal/rewarder",
     live: "https://rewarder-dashboard.onrender.com/",
+    details: [
+      "Rewarder was my take on making social media more purposeful a gamified MERN-based app where users earn rewards for consistent engagement and meaningful activity.",
+      "I integrated Twitter and Reddit APIs to bring real-time content into the platform, allowing users to explore, save, report, and share posts while maintaining a smooth and responsive experience.",
+      "The system uses secure, role-based authentication with JWT and bcrypt, along with protected admin routes for efficient user and content moderation.",
+      "An analytics-driven admin dashboard displays charts and metrics for posts, users, and platform activity, all optimized for performance with a 100/100 PageSpeed score.",
+    ],
   },
   {
     id: 3,
@@ -111,6 +124,7 @@ export const projects: ProjectData[] = [
     ],
     repo: "https://github.com/thekiranmahajan/FundVerse",
     live: "https://fundverse-by-us.vercel.app",
+    details: [],
   },
   {
     id: 4,
@@ -137,5 +151,6 @@ export const projects: ProjectData[] = [
     ],
     repo: "https://github.com/thesakshijaiswal/fusion",
     live: "https://fusion-dashboard-ten.vercel.app/",
+    details: [],
   },
 ];

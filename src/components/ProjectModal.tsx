@@ -93,6 +93,17 @@ export default function ProjectModal({
                 <p className="mb-5 text-sm leading-relaxed text-gray-300 sm:text-lg">
                   {selectedCard.description}
                 </p>
+                <div className="mb-5 leading-relaxed text-gray-400 sm:text-lg">
+                  {selectedCard.details.map((data, index) => {
+                    return (
+                      <div key={index}>
+                        <ul>
+                          <li className="text-sm">{data}</li>
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
 
                 <div className="flex flex-wrap gap-2">
                   {selectedCard.skills.map((skill) => (
