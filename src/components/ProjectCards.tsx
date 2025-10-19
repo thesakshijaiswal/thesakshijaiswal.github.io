@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { projects, type ProjectData } from "@/data/projectData";
 import { PiStarFour } from "react-icons/pi";
 import ProjectModal from "./ProjectModal";
+import { FiGithub, FiGlobe } from "react-icons/fi";
 
 export default function ProjectCards() {
   const [selectedCard, setSelectedCard] = useState<ProjectData | null>(null);
@@ -58,17 +59,39 @@ export default function ProjectCards() {
                 style={{ willChange: "transform" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
-              <div className="absolute top-6 left-6">
+              <div className="absolute inset-x-6 top-6 z-10 flex items-center justify-between">
                 <div className="w-fit rounded-full bg-black/20 p-2 text-white">
-                  <PiStarFour className="transition-transform duration-300 ease-in group-hover:rotate-180" />
+                  <PiStarFour className="size-5 md:size-4 lg:size-5" />
                 </div>
-                <h3 className="mt-6 max-w-md text-3xl leading-tight font-bold text-white">
-                  {project.title}
-                </h3>
-                <p className="mt-2 line-clamp-2 max-w-xs text-xs text-white/90">
-                  {project.description}
-                </p>
+                <div className="flex gap-3">
+                  <a
+                    href={selectedCard?.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-fit rounded-full bg-black/20 p-2 text-white transition hover:bg-black/40"
+                  >
+                    <FiGithub className="size-5 md:size-4 lg:size-5" />
+                  </a>
+
+                  <a
+                    href={selectedCard?.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-fit rounded-full bg-black/20 p-2 text-white transition hover:bg-black/40"
+                  >
+                    <FiGlobe className="size-5 md:size-4 lg:size-5" />
+                  </a>
+                </div>
               </div>
+
+              <h3 className="absolute top-16 left-6 mt-6 max-w-md text-3xl leading-tight font-bold text-white md:text-xl lg:text-3xl">
+                {project.title}
+              </h3>
+              <p className="absolute top-32 left-6 mt-2 line-clamp-2 max-w-xs text-xs text-white/90 md:top-[7rem] lg:top-32">
+                {project.description}
+              </p>
             </motion.div>
           );
         })}
