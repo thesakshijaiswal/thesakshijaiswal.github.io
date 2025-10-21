@@ -2,8 +2,9 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { PiStarFour } from "react-icons/pi";
-import { type ProjectData } from "@/data/projectData";
 import { FiGithub, FiGlobe } from "react-icons/fi";
+import { MdOfflineBolt } from "react-icons/md";
+import { type ProjectData } from "@/data/projectData";
 
 interface ProjectModalProps {
   selectedCard: ProjectData | null;
@@ -93,16 +94,14 @@ export default function ProjectModal({
                 <p className="mb-5 text-sm leading-relaxed text-gray-300 sm:text-lg">
                   {selectedCard.description}
                 </p>
-                <div className="mb-5 leading-relaxed text-gray-400 sm:text-lg">
-                  {selectedCard.details.map((data, index) => {
-                    return (
-                      <div key={index}>
-                        <ul>
-                          <li className="text-sm">{data}</li>
-                        </ul>
-                      </div>
-                    );
-                  })}
+
+                <div className="mb-5 space-y-2 leading-relaxed text-gray-400 sm:text-lg">
+                  {selectedCard.details.map((data, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <MdOfflineBolt className="mt-1 size-3 flex-shrink-0 text-emerald-400" />
+                      <p className="text-sm sm:text-base">{data}</p>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="flex flex-wrap gap-2">
