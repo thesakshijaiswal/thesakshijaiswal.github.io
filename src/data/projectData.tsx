@@ -1,12 +1,15 @@
 import { ReactNode } from "react";
-import { FaReact, FaNodeJs, FaShopify, FaFigma } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaFigma, FaHardHat } from "react-icons/fa";
 import {
   SiExpress,
   SiMongodb,
   SiJavascript,
   SiTypescript,
   SiRedux,
+  SiSolidity,
+  SiThirdweb,
 } from "react-icons/si";
+
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
@@ -120,6 +123,22 @@ export const projects: ProjectData[] = [
       {
         icon: <FaNodeJs size={16} className="text-green-500" />,
         label: "Node.js",
+      },
+      {
+        icon: <RiTailwindCssFill size={16} className="text-sky-400" />,
+        label: "Tailwind CSS",
+      },
+      {
+        icon: <SiSolidity size={16} className="text-white" />,
+        label: "Solidity",
+      },
+      {
+        icon: <FaHardHat size={16} className="text-yellow-300" />,
+        label: "Hardhat",
+      },
+      {
+        icon: <SiThirdweb size={16} className="text-pink-600" />,
+        label: "ThirdWeb",
       },
     ],
     repo: "https://github.com/thekiranmahajan/FundVerse",
