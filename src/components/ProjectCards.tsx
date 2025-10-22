@@ -65,7 +65,7 @@ export default function ProjectCards() {
                 </div>
                 <div className="flex gap-3">
                   <a
-                    href={selectedCard?.repo}
+                    href={project.repo}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
@@ -75,7 +75,7 @@ export default function ProjectCards() {
                   </a>
 
                   <a
-                    href={selectedCard?.live}
+                    href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}

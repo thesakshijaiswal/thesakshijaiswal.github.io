@@ -27,7 +27,7 @@ export interface ProjectData {
   skills: SkillTag[];
   repo: string;
   live: string;
-  details: String[];
+  details: string[];
 }
 
 export const projects: ProjectData[] = [
