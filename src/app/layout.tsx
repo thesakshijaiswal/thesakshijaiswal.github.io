@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   authors: [{ name: "Sakshi Jaiswal" }],
+  icons: {
+    icon: [
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/sakshi_logo.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

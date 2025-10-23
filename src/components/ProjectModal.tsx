@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { PiStarFour } from "react-icons/pi";
 import { FiGithub, FiGlobe } from "react-icons/fi";
 import { MdOfflineBolt } from "react-icons/md";
-import { type ProjectData } from "@/data/projectData";
+import { type ProjectData } from "@/data/ProjectData";
 
 interface ProjectModalProps {
   selectedCard: ProjectData | null;

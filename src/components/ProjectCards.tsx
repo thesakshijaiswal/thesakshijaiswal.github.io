@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { projects, type ProjectData } from "@/data/projectData";
+import { projects, type ProjectData } from "@/data/ProjectData";
 import { PiStarFour } from "react-icons/pi";
 import ProjectModal from "./ProjectModal";
 import { FiGithub, FiGlobe } from "react-icons/fi";
