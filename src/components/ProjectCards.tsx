@@ -89,7 +89,7 @@ export default function ProjectCards() {
               <h3 className="absolute top-16 left-6 mt-6 max-w-md text-3xl leading-tight font-bold text-white md:text-xl lg:text-3xl">
                 {project.title}
               </h3>
-              <p className="absolute top-32 left-6 mt-2 line-clamp-2 max-w-xs text-xs text-white/90 md:top-[7rem] lg:top-32">
+              <p className="absolute top-32 left-6 mt-2 mr-2 line-clamp-2 max-w-xs text-xs text-white/90 md:top-[7rem] lg:top-32">
                 {project.description}
               </p>
             </motion.div>

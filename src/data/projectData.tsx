@@ -10,7 +10,11 @@ import {
   SiThirdweb,
 } from "react-icons/si";
 
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import {
+  RiNextjsFill,
+  RiTailwindCssFill,
+  RiTwitterXLine,
+} from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 export interface SkillTag {
@@ -60,6 +64,10 @@ export const projects: ProjectData[] = [
         icon: <RiTailwindCssFill size={16} className="text-sky-400" />,
         label: "Tailwind CSS",
       },
+      {
+        icon: <TbBrandFramerMotion size={16} className="text-pink-600" />,
+        label: "Framer Motion",
+      },
     ],
     repo: "https://github.com/thesakshijaiswal/be-commerce",
     live: "https://be-commerce-q7nw.onrender.com/",
@@ -93,6 +101,16 @@ export const projects: ProjectData[] = [
       {
         icon: <FaNodeJs size={16} className="text-green-500" />,
         label: "Node.js",
+      },
+      {
+        icon: <SiMongodb size={16} className="text-green-500" />,
+        label: "MongoDB",
+      },
+      {
+        icon: (
+          <RiTwitterXLine size={16} className="text-black dark:text-white" />
+        ),
+        label: "Twitter API",
       },
     ],
     repo: "https://github.com/thesakshijaiswal/rewarder",

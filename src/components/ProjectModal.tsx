@@ -89,9 +89,9 @@ export default function ProjectModal({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ delay: 0.1, duration: 0.3 }}
-                className="p-5 text-white sm:p-8"
+                className="bg-white p-5 text-white sm:p-8 dark:bg-[#242533]"
               >
-                <p className="mb-5 text-sm leading-relaxed text-gray-300 sm:text-lg">
+                <p className="mb-5 text-sm leading-relaxed text-gray-700 sm:text-lg dark:text-gray-300">
                   {selectedCard.description}
                 </p>
 
@@ -109,7 +109,7 @@ export default function ProjectModal({
                     <motion.div
                       key={skill.label}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-200 backdrop-blur-md sm:text-sm"
+                      className="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-600 backdrop-blur-md sm:text-sm dark:text-gray-200"
                     >
                       {skill.icon}
                       <span>{skill.label}</span>
