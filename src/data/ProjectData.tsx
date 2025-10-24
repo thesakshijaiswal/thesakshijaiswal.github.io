@@ -1,5 +1,11 @@
 import { ReactNode } from "react";
-import { FaReact, FaNodeJs, FaFigma, FaHardHat } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaFigma,
+  FaHardHat,
+  FaRedditAlien,
+} from "react-icons/fa";
 import {
   SiExpress,
   SiMongodb,
@@ -72,9 +78,9 @@ export const projects: ProjectData[] = [
     repo: "https://github.com/thesakshijaiswal/be-commerce",
     live: "https://be-commerce-q7nw.onrender.com/",
     details: [
-      "BE-Commerce started as my attempt to build a complete online shopping experience from scratch, something that went beyond static product listings. I wanted users to browse, review, and actually make purchases in real time.",
-      "I designed a clean, responsive UI with Tailwind CSS that feels natural on any device. The product pages, category filters, and cart flow were all built with a focus on smooth transitions and accessibility.",
-      "On the backend, I created a secure authentication system using JWT and bcrypt, ensuring users could safely register, log in, and manage their profiles.",
+      "BE-Commerce started as my attempt to build a complete online shopping experience from scratch. I wanted users to browse, review, and actually make purchases in real time with stripe.",
+      "I designed a clean, responsive UI with Tailwind CSS that feels natural on any device. Featuring shimmer loaders, pagination, and real-time order tracking timeline.",
+      "On the backend, I created a secure authentication system using JWT, bcrypt, Google OAuth and mailtrap, ensuring users could safely register, log in, and manage their profiles.",
       "Built on the MERN stack with Express and MongoDB, the system handles products, users, and images efficiently through a well structured REST API and Cloudinary integration.",
     ],
   },
@@ -112,6 +118,10 @@ export const projects: ProjectData[] = [
         ),
         label: "Twitter API",
       },
+      {
+        icon: <FaRedditAlien size={16} className="text-orange-500" />,
+        label: "Reddit API",
+      },
     ],
     repo: "https://github.com/thesakshijaiswal/rewarder",
     live: "https://rewarder-dashboard.onrender.com/",
@@ -135,7 +145,12 @@ export const projects: ProjectData[] = [
         label: "React.js",
       },
       {
-        icon: <SiJavascript size={13} className="text-yellow-400" />,
+        icon: (
+          <SiJavascript
+            size={13}
+            className="text-yellow-500 dark:text-yellow-300"
+          />
+        ),
         label: "JavaScript",
       },
       {
@@ -147,11 +162,16 @@ export const projects: ProjectData[] = [
         label: "Tailwind CSS",
       },
       {
-        icon: <SiSolidity size={16} className="text-white" />,
+        icon: <SiSolidity size={16} className="text-black dark:text-white" />,
         label: "Solidity",
       },
       {
-        icon: <FaHardHat size={16} className="text-yellow-300" />,
+        icon: (
+          <FaHardHat
+            size={16}
+            className="text-yellow-500 dark:text-yellow-300"
+          />
+        ),
         label: "Hardhat",
       },
       {
@@ -161,7 +181,12 @@ export const projects: ProjectData[] = [
     ],
     repo: "https://github.com/thekiranmahajan/FundVerse",
     live: "https://fundverse-by-us.vercel.app",
-    details: [],
+    details: [
+      "FundVerse started as my curiosity to see if crowdfunding could exist without middleman, built purely on trust and transparency through blockchain.",
+      "I built it as a decentralized application on Ethereum using Solidity and React, deploying smart contracts on the Sepolia testnet to simulate real world blockchain transactions.",
+      "Using Thirdweb and Hardhat, my team tackled challenges around gas optimization ensuring that every campaign from creation to donation or deletion remained secure and traceable.",
+      "What began as an experiment evolved into a fully functional DApp counting 30+ active campaigns, earning 3rd prize at a national level expo for innovation in blockchain based systems.",
+    ],
   },
   {
     id: 4,
@@ -188,6 +213,11 @@ export const projects: ProjectData[] = [
     ],
     repo: "https://github.com/thesakshijaiswal/fusion",
     live: "https://fusion-dashboard-ten.vercel.app/",
-    details: [],
+    details: [
+      "This project started as an interactive experiment to create a playful, collaborative interface, inspired by Figma's real time multiplayer experience.",
+      "I designed a custom multiplayer cursor and animated hero cards with drag-and-drop, giving users a sense of direct interaction and control.",
+      "Infinite scroll effects, scroll triggered text reveals, and interactive hover animations were added with Framer Motion to keep the interface lively and engaging.",
+      "Even supporting elements like FAQs and integrations were brought to life with smooth animations and bidirectional scrolling, delivering a polished, startup grade user experience.",
+    ],
   },
 ];
