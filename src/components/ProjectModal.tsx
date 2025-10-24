@@ -91,7 +91,7 @@ export default function ProjectModal({
                 transition={{ delay: 0.1, duration: 0.3 }}
                 className="bg-white p-5 text-white sm:p-8 dark:bg-[#242533]"
               >
-                <p className="mb-5 text-sm leading-relaxed text-gray-700 sm:text-lg dark:text-gray-300">
+                <p className="mb-5 text-sm leading-relaxed font-medium text-gray-700 sm:text-lg dark:text-gray-300">
                   {selectedCard.description}
                 </p>
 
@@ -99,7 +99,9 @@ export default function ProjectModal({
                   {selectedCard.details.map((data, index) => (
                     <div key={index} className="flex items-start gap-2">
                       <MdOfflineBolt className="mt-1 size-3 flex-shrink-0 text-emerald-400" />
-                      <p className="text-sm sm:text-base">{data}</p>
+                      <p className="text-sm text-gray-600 sm:text-base dark:text-gray-500">
+                        {data}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -109,7 +111,7 @@ export default function ProjectModal({
                     <motion.div
                       key={skill.label}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-600 backdrop-blur-md sm:text-sm dark:text-gray-200"
+                      className="flex items-center gap-1 rounded-full bg-black/10 px-3 py-1 text-xs font-medium text-gray-600 backdrop-blur-md sm:text-sm dark:bg-white/10 dark:text-gray-200"
                     >
                       {skill.icon}
                       <span>{skill.label}</span>
