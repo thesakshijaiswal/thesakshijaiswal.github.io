@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { StaticImageData } from "next/image";
 import {
   FaReact,
   FaNodeJs,
@@ -23,6 +24,8 @@ import {
 } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
+import ProjectImg4 from "@/assets/projects/fusion-mock.avif";
+
 export interface SkillTag {
   icon: ReactNode;
   label: string;
@@ -32,7 +35,7 @@ export interface SkillTag {
 export interface ProjectData {
   id: number;
   title: string;
-  image: string;
+  image: StaticImageData;
   description: string;
   skills: SkillTag[];
   repo: string;
@@ -44,8 +47,7 @@ export const projects: ProjectData[] = [
   {
     id: 1,
     title: "BE Commerce",
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+    image: ProjectImg4,
     description:
       "A full-stack eCommerce platform with payments, product management, and reviews.",
     skills: [
@@ -87,8 +89,7 @@ export const projects: ProjectData[] = [
   {
     id: 2,
     title: "Rewarder",
-    image:
-      "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=800&q=80",
+    image: ProjectImg4,
     description:
       "A gamified task reward app designed to build consistency with micro-goals.",
     skills: [
@@ -135,8 +136,7 @@ export const projects: ProjectData[] = [
   {
     id: 3,
     title: "FundVerse",
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+    image: ProjectImg4,
     description:
       "A platform enabling transparent fundraising with secure transactions and project updates.",
     skills: [
@@ -191,8 +191,7 @@ export const projects: ProjectData[] = [
   {
     id: 4,
     title: "Fusion",
-    image:
-      "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800&q=80",
+    image: ProjectImg4,
     description:
       "A curated UI showcase built with Next.js and TypeScript to experiment with animations and layouts.",
     skills: [
