@@ -6,6 +6,7 @@ import { projects, type ProjectData } from "@/data/ProjectData";
 import { PiStarFour } from "react-icons/pi";
 import ProjectModal from "./ProjectModal";
 import { FiGithub, FiGlobe } from "react-icons/fi";
+import Image from "next/image";
 
 export default function ProjectCards() {
   const [selectedCard, setSelectedCard] = useState<ProjectData | null>(null);
@@ -52,13 +53,15 @@ export default function ProjectCards() {
               className="group relative h-80 cursor-pointer overflow-hidden rounded-3xl shadow-lg"
               style={{ willChange: "transform" }}
             >
-              <motion.img
+              <Image
                 src={project.image}
                 alt={project.title}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
                 style={{ willChange: "transform" }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/40 to-black/80" />
               <div className="absolute inset-x-6 top-6 z-10 flex items-center justify-between">
                 <div className="w-fit rounded-full bg-black/20 p-2 text-white">
                   <PiStarFour className="size-5 transition-transform duration-300 ease-in group-hover:rotate-180 md:size-4 lg:size-5" />
@@ -89,7 +92,7 @@ export default function ProjectCards() {
               <h3 className="absolute top-16 left-6 mt-6 max-w-md text-3xl leading-tight font-bold text-white md:text-xl lg:text-3xl">
                 {project.title}
               </h3>
-              <p className="absolute top-32 left-6 mt-2 mr-2 line-clamp-2 max-w-xs text-xs text-white/90 md:top-[7rem] lg:top-32">
+              <p className="absolute top-32 left-6 mt-2 mr-2 line-clamp-2 max-w-xs text-xs text-white md:top-[7rem] lg:top-32">
                 {project.description}
               </p>
             </motion.div>

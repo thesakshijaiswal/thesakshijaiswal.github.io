@@ -5,7 +5,7 @@ import { PiStarFour } from "react-icons/pi";
 import { FiGithub, FiGlobe } from "react-icons/fi";
 import { MdOfflineBolt } from "react-icons/md";
 import { type ProjectData } from "@/data/ProjectData";
-
+import Image from "next/image";
 interface ProjectModalProps {
   selectedCard: ProjectData | null;
   onClose: () => void;
@@ -45,13 +45,14 @@ export default function ProjectModal({
               style={{ willChange: "transform" }}
             >
               <div className="relative h-64 overflow-hidden sm:h-80">
-                <motion.img
+                <Image
                   src={selectedCard.image}
                   alt={selectedCard.title}
                   className="h-full w-full object-cover"
+                  fill
                   style={{ willChange: "transform" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/30 to-black/60" />
                 <div className="absolute inset-x-6 top-6 z-10 flex items-center justify-between">
                   <div className="w-fit rounded-full bg-black/20 p-2 text-white">
                     <PiStarFour className="size-5" />
