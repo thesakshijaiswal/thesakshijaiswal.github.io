@@ -15,7 +15,7 @@ export default function Hero() {
             </a>
             <ThemeToggle />
           </div>
-          <div className="mt-9 md:mt-28">
+          <div className="mt-9 cursor-default md:mt-28">
             <p className="mb-2 text-sm font-medium tracking-wide text-slate-200 md:text-xl lg:text-2xl">
               Hi, I&apos;m
             </p>

@@ -21,9 +21,11 @@ export default function ProjectsPage() {
           <LogoBox className="size-20 place-content-center">
             <SkillFlip />
           </LogoBox>
-          <h2 className="text-2xl font-bold">Things I&apos;ve Built</h2>
+          <h2 className="cursor-default text-2xl font-bold">
+            Things I&apos;ve Built
+          </h2>
         </header>
-        <p className="mt-4 mb-10 text-gray-500">
+        <p className="mt-4 mb-10 cursor-default text-gray-500">
           Every project is a story of curiosity turned into code. I&apos;ve
           built things that not only function but feel right, blending design,
           logic, and a bit of obsession for detail to bring ideas to life from
