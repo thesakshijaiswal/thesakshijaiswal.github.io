@@ -43,7 +43,7 @@ export default function ProjectCards() {
               onClick={() => handleCardClick(project)}
               animate={{ opacity: isInactive ? 0.5 : 1 }}
               whileHover={
-                !isTouch && !selectedCard ? { scale: 1.04, y: -2 } : {}
+                !isTouch && !selectedCard ? { scale: 1.02, y: -2 } : {}
               }
               transition={{
                 type: "spring",
@@ -61,7 +61,7 @@ export default function ProjectCards() {
                 style={{ willChange: "transform" }}
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/40 to-black/80" />
+              <div className="absolute inset-0 bg-black/70" />
               <div className="absolute inset-x-6 top-6 z-10 flex items-center justify-between">
                 <div className="w-fit rounded-full bg-black/20 p-2 text-white">
                   <PiStarFour className="size-5 transition-transform duration-300 ease-in group-hover:rotate-180 md:size-4 lg:size-5" />
@@ -89,7 +89,7 @@ export default function ProjectCards() {
                 </div>
               </div>
 
-              <h3 className="absolute top-16 left-6 mt-6 max-w-md text-3xl leading-tight font-bold text-white md:text-xl lg:text-3xl">
+              <h3 className="absolute top-16 left-6 mt-6 max-w-md text-2xl leading-tight font-bold text-white md:text-xl lg:text-2xl">
                 {project.title}
               </h3>
               <p className="absolute top-32 left-6 mt-2 mr-2 line-clamp-2 max-w-xs text-xs text-white md:top-[7rem] lg:top-32">

@@ -49,14 +49,14 @@ export default function ExperienceCard() {
               </div>
             </div>
 
-            <h3 className="text-sm font-medium">{data.role}</h3>
+            <h3 className="cursor-default text-sm font-medium">{data.role}</h3>
 
             <div
               className={`overflow-hidden transition-all duration-300 ${
                 isOpen ? "max-h-96" : "max-h-0"
               }`}
             >
-              <ul className="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-500">
+              <ul className="mt-2 cursor-default space-y-1 text-sm text-gray-600 dark:text-gray-500">
                 {data.description.map((point, i) => (
                   <div className="flex gap-2" key={i}>
                     <span>

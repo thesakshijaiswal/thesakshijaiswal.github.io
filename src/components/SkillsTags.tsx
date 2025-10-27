@@ -8,7 +8,7 @@ type Props = {
 
 export default function SkillTags({ sections = SkillSections }: Props) {
   return (
-    <div className="mt-6 space-y-7">
+    <div className="mt-6 cursor-default space-y-7">
       {sections.map((section) => (
         <div key={section.title}>
           <h4 className="flex items-center gap-2 text-lg font-bold">

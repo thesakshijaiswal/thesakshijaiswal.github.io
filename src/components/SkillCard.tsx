@@ -14,13 +14,13 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
   const y = useMotionValue(0);
   const glowX = useMotionValue(50);
   const glowY = useMotionValue(50);
-  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [20, -20]), {
-    stiffness: 300,
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [13, -13]), {
+    stiffness: 200,
     damping: 30,
   });
 
-  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-20, 20]), {
-    stiffness: 300,
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-13, 13]), {
+    stiffness: 200,
     damping: 30,
   });
 

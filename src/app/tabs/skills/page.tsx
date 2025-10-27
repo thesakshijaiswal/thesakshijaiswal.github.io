@@ -20,10 +20,10 @@ export default function SkillsPage() {
         <LogoBox className="size-20 place-content-center">
           <SkillFlip />
         </LogoBox>
-        <h1 className="text-2xl font-bold">My SuperPowers</h1>
+        <h1 className="cursor-default text-2xl font-bold">My SuperPowers</h1>
       </div>
 
-      <div className="mt-4 space-y-6 text-sm leading-relaxed text-gray-600 md:text-base dark:text-gray-500">
+      <div className="mt-4 cursor-default space-y-6 text-sm leading-relaxed text-gray-600 md:text-base dark:text-gray-500">
         <p>
           Every creator has their toolkit, but I like to think of mine as
           superpowers. From weaving clean UIs to powering up backends, these are

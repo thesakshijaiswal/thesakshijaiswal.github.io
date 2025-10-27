@@ -20,10 +20,10 @@ export default function ExperiencePage() {
         <LogoBox className="size-20 place-content-center">
           <ExperienceFlip />
         </LogoBox>
-        <h1 className="text-2xl font-bold">My Experience</h1>
+        <h1 className="cursor-default text-2xl font-bold">My Experience</h1>
       </div>
 
-      <p className="mt-4 text-gray-500">
+      <p className="mt-4 cursor-default text-gray-500">
         It&apos;s all about building things that matter, from crafting clean,
         production ready web apps to shaping engaging learning experiences for
         global audiences. Along the way I&apos;ve learned to move fast, solve

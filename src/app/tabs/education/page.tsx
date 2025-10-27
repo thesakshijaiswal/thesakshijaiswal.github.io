@@ -23,9 +23,9 @@ export default function EducationPage() {
         <LogoBox className="size-20 place-content-center">
           <HiAcademicCap className="size-11" />
         </LogoBox>
-        <h2 className="text-2xl font-bold">My Academic Path</h2>
+        <h2 className="cursor-default text-2xl font-bold">My Academic Path</h2>
       </header>
-      <p className="mt-4 text-gray-500">
+      <p className="mt-4 cursor-default text-gray-500">
         From a curious learner to the Academic topper, my college journey was
         all about growth. Along the way, I balanced grades with passion, leading
         technical events that honed my leadership and creativity.
