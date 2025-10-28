@@ -24,7 +24,7 @@ import {
 } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
-import ProjectImg4 from "@/assets/projects/fusion-mock.avif";
+import ProjectImg4 from "@/assets/projects/fusion-mock.webp";
 
 export interface SkillTag {
   icon: ReactNode;
@@ -61,7 +61,7 @@ export const projects: ProjectData[] = [
         label: "Node.js",
       },
       {
-        icon: <SiExpress size={15} className="text-gray-500" />,
+        icon: <SiExpress size={15} className="text-blue-500" />,
         label: "Express",
       },
       {
@@ -98,7 +98,7 @@ export const projects: ProjectData[] = [
         label: "React.js",
       },
       {
-        icon: <SiExpress size={13} className="text-blue-500" />,
+        icon: <SiExpress size={15} className="text-blue-500" />,
         label: "Express",
       },
       {
@@ -207,6 +207,10 @@ export const projects: ProjectData[] = [
       {
         icon: <TbBrandFramerMotion size={15} className="text-pink-500" />,
         label: "Framer Motion",
+      },
+      {
+        icon: <RiTailwindCssFill size={17} className="text-indigo-400" />,
+        label: "Tailwind Merge",
       },
       { icon: <FaFigma size={13} className="text-pink-400" />, label: "Figma" },
     ],

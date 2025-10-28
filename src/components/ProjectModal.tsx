@@ -50,6 +50,7 @@ export default function ProjectModal({
                   alt={selectedCard.title}
                   className="h-full w-full object-cover"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   style={{ willChange: "transform" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/30 to-black/60" />

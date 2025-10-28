@@ -32,7 +32,7 @@ export default function ThemeToggle() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.2 }}
-      className="rounded-lg bg-white/5 p-2 transition-colors hover:bg-white/10"
+      className="cursor-pointer rounded-lg bg-white/5 p-2 transition-colors hover:bg-white/10"
       onClick={cycleTheme}
       aria-label={`Current theme: ${theme}. Click to cycle themes.`}
       title={`Current: ${theme}. Click to cycle.`}
