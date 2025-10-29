@@ -24,6 +24,7 @@ import {
 } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
+import ProjectImg3 from "@/assets/projects/fundverse-mock.webp";
 import ProjectImg4 from "@/assets/projects/fusion-mock.webp";
 
 export interface SkillTag {
@@ -136,7 +137,7 @@ export const projects: ProjectData[] = [
   {
     id: 3,
     title: "FundVerse",
-    image: ProjectImg4,
+    image: ProjectImg3,
     description:
       "A platform enabling transparent fundraising with secure transactions and project updates.",
     skills: [
