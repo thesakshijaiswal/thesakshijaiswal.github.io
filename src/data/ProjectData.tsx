@@ -23,7 +23,7 @@ import {
   RiTwitterXLine,
 } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
-
+import ProjectImg1 from "@/assets/projects/becommerce-mock.webp";
 import ProjectImg2 from "@/assets/projects/rewarder-mock.webp";
 import ProjectImg3 from "@/assets/projects/fundverse-mock.webp";
 import ProjectImg4 from "@/assets/projects/fusion-mock.webp";
@@ -49,7 +49,7 @@ export const projects: ProjectData[] = [
   {
     id: 1,
     title: "BE Commerce",
-    image: ProjectImg4,
+    image: ProjectImg1,
     description:
       "A full-stack eCommerce platform with payments, product management, and reviews.",
     skills: [
