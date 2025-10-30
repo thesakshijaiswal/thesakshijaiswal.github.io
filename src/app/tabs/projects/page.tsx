@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import SkillFlip from "@/components/SkillFlip";
 import LogoBox from "@/components/LogoBox";
 import ProjectCards from "@/components/ProjectCards";
+import Button from "@/components/Button";
+import { HiArrowRight } from "react-icons/hi";
 
 export const metadata: Metadata = {
   title: "My Projects",
@@ -33,6 +35,14 @@ export default function ProjectsPage() {
         </p>
 
         <ProjectCards />
+        <div className="mt-12 flex justify-center">
+          <Button
+            text="View Full Projects"
+            icon={<HiArrowRight size={18} />}
+            href="https://github.com/thesakshijaiswal"
+            title="View Full Projects"
+          />
+        </div>
       </section>
     </>
   );

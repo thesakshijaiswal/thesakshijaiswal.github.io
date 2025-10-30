@@ -23,7 +23,7 @@ export default function Button({
     dark:bg-gray-900 bg-gray-800 px-8 py-2 font-semibold text-white 
     transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 
     hover:shadow-gray-600/30 whitespace-nowrap 
-    w-full sm:w-auto ${className}  
+     ${className}  
   `;
 
   const content = (
@@ -37,7 +37,7 @@ export default function Button({
     href?.endsWith(".pdf") || href?.endsWith(".doc") || href?.endsWith(".txt");
 
   return (
-    <div className="group relative flex w-full sm:w-auto">
+    <div className="group relative flex w-fit">
       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 via-pink-300 to-indigo-500 opacity-60 blur-lg filter transition-all duration-1000 group-hover:duration-200 dark:opacity-45 dark:group-hover:opacity-65"></div>
 
       {href ? (
