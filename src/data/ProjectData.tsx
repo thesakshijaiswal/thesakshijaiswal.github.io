@@ -24,6 +24,7 @@ import {
 } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
+import ProjectImg2 from "@/assets/projects/rewarder-mock.webp";
 import ProjectImg3 from "@/assets/projects/fundverse-mock.webp";
 import ProjectImg4 from "@/assets/projects/fusion-mock.webp";
 
@@ -90,7 +91,7 @@ export const projects: ProjectData[] = [
   {
     id: 2,
     title: "Rewarder",
-    image: ProjectImg4,
+    image: ProjectImg2,
     description:
       "A gamified task reward app designed to build consistency with micro-goals.",
     skills: [

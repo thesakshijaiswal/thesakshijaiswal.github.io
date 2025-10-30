@@ -53,7 +53,7 @@ export default function ProjectModal({
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   style={{ willChange: "transform" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/30 to-black/60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-black/30 to-black/60" />
                 <div className="absolute inset-x-6 top-6 z-10 flex items-center justify-between">
                   <div className="w-fit rounded-full bg-black/20 p-2 text-white">
                     <PiStarFour className="size-5" />
