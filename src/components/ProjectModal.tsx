@@ -15,6 +15,8 @@ export default function ProjectModal({
   selectedCard,
   onClose,
 }: ProjectModalProps) {
+  const circularIcon =
+    "w-fit rounded-full bg-gradient-to-r from-indigo-900/50 to-pink-200/20 p-2 text-white hover:bg-indigo-900/60 transition duration-200";
   return (
     <AnimatePresence>
       {selectedCard && (
@@ -41,7 +43,7 @@ export default function ProjectModal({
                 opacity: 0,
                 transition: { duration: 0.25 },
               }}
-              className="relative w-full max-w-4xl overflow-hidden rounded-3xl bg-gray-900 shadow-2xl"
+              className="relative w-full max-w-4xl overflow-hidden rounded-3xl bg-white shadow-2xl dark:bg-[#242533]"
               style={{ willChange: "transform" }}
             >
               <div className="relative h-64 overflow-hidden sm:h-80">
@@ -55,7 +57,7 @@ export default function ProjectModal({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-black/30 to-black/60" />
                 <div className="absolute inset-x-6 top-6 z-10 flex items-center justify-between">
-                  <div className="w-fit rounded-full bg-black/20 p-2 text-white">
+                  <div className={circularIcon}>
                     <PiStarFour className="size-5" />
                   </div>
                   <div className="flex gap-3">
@@ -64,7 +66,7 @@ export default function ProjectModal({
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="w-fit rounded-full bg-black/20 p-2 text-white transition hover:bg-black/40"
+                      className={circularIcon}
                     >
                       <FiGithub className="size-5" />
                     </a>
@@ -74,7 +76,7 @@ export default function ProjectModal({
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="w-fit rounded-full bg-black/20 p-2 text-white transition hover:bg-black/40"
+                      className={circularIcon}
                     >
                       <FiGlobe className="size-5" />
                     </a>

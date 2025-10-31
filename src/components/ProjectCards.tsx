@@ -12,6 +12,8 @@ export default function ProjectCards() {
   const [selectedCard, setSelectedCard] = useState<ProjectData | null>(null);
   const [isTouch, setIsTouch] = useState(false);
 
+  const circularIcon =
+    "w-fit rounded-full bg-gradient-to-r from-indigo-900/50 to-pink-200/20 p-2 text-white hover:bg-indigo-900/60 transition duration-200";
   useEffect(() => {
     setIsTouch(window.matchMedia("(pointer: coarse)").matches);
   }, []);
@@ -65,7 +67,7 @@ export default function ProjectCards() {
 
               <div className="absolute inset-0 bg-black/70" />
               <div className="absolute inset-x-6 top-6 z-10 flex items-center justify-between">
-                <div className="w-fit rounded-full bg-black/20 p-2 text-white">
+                <div className={circularIcon}>
                   <PiStarFour className="size-5 transition-transform duration-300 ease-in group-hover:rotate-180 md:size-4 lg:size-5" />
                 </div>
                 <div className="flex gap-3">
@@ -74,7 +76,7 @@ export default function ProjectCards() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="w-fit rounded-full bg-black/20 p-2 text-white transition hover:bg-black/40"
+                    className={circularIcon}
                   >
                     <FiGithub className="size-5 md:size-4 lg:size-5" />
                   </a>
@@ -84,7 +86,7 @@ export default function ProjectCards() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="w-fit rounded-full bg-black/20 p-2 text-white transition hover:bg-black/40"
+                    className={circularIcon}
                   >
                     <FiGlobe className="size-5 md:size-4 lg:size-5" />
                   </a>
