@@ -69,7 +69,7 @@ export default function Button({
   };
 
   return (
-    <div className="group relative flex w-fit">
+    <div className="group relative flex w-fit select-none">
       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 via-pink-300 to-indigo-500 opacity-60 blur-lg filter transition-all duration-1000 group-hover:duration-200 dark:opacity-45 dark:group-hover:opacity-65"></div>
 
       {href ? (

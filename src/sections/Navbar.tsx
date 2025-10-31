@@ -57,7 +57,7 @@ export default function Navbar() {
           return (
             <li
               key={link.label}
-              className="mb-2 ml-2 text-sm font-medium tracking-wider"
+              className="mb-2 ml-2 text-sm font-medium tracking-wider select-none"
             >
               <Link
                 href={link.href}

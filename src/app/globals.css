@@ -45,6 +45,16 @@ body {
     #22125b;
 }
 
+::selection {
+  background: #22125b;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: #22125b;
+  color: #ffffff;
+}
+
 .hero-tagline {
   font-family:
     IBMPlexMono,
