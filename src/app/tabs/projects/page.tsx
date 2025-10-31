@@ -41,6 +41,7 @@ export default function ProjectsPage() {
             icon={<HiArrowRight size={18} />}
             href="https://github.com/thesakshijaiswal"
             title="View Full Projects"
+            newTab
           />
         </div>
       </section>
