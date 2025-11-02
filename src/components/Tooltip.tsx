@@ -28,7 +28,7 @@ export default function Tooltip({ description, children }: TooltipProps) {
             className="absolute bottom-full mb-2 w-3xs rounded-lg bg-white/90 px-1 py-1.5 text-center shadow-lg backdrop-blur-sm dark:bg-black/80"
           >
             {description && (
-              <p className="mt-1 text-xs lg:text-[10px] leading-snug text-gray-700 dark:text-gray-300">
+              <p className="mt-1 text-[10px] leading-snug text-gray-700 lg:text-xs dark:text-gray-300">
                 {description}
               </p>
             )}
