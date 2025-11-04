@@ -1,5 +1,6 @@
 import Hero from "@/sections/Hero";
 import BaseLayout from "@/sections/BaseLayout";
+import Footer from "@/sections/Footer";
 
 export default function TabsLayout({
   children,
@@ -8,8 +9,11 @@ export default function TabsLayout({
 }) {
   return (
     <>
-      <Hero />
-      <BaseLayout>{children}</BaseLayout>
+      <div className="min-h-screen md:pb-20">
+        <Hero />
+        <BaseLayout>{children}</BaseLayout>
+      </div>
+      <Footer />
     </>
   );
 }

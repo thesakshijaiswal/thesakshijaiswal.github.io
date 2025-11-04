@@ -25,7 +25,7 @@ export default function Tooltip({ description, children }: TooltipProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 6 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-full mb-2 hidden rounded-lg bg-white/90 px-1 py-1.5 text-center shadow-lg backdrop-blur-sm before:absolute before:top-full before:right-0.5 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-t-white/90 before:content-[''] md:mr-40 md:block md:w-48 lg:mr-36 xl:mr-0 xl:w-56 xl:before:right-24 dark:bg-black/80 dark:before:border-t-black/80"
+            className="absolute bottom-full mb-2 hidden rounded-lg bg-white/90 px-1 py-1.5 text-center shadow-lg backdrop-blur-sm before:absolute before:top-full before:right-0.5 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-t-white/90 before:content-[''] md:mr-40 md:block md:w-48 lg:mr-36 xl:mr-0 xl:w-56 xl:before:right-24 dark:bg-[#171823] dark:before:border-t-[#171823]"
           >
             {description && (
               <p className="mt-1 text-[10px] leading-snug text-gray-700 lg:text-xs dark:text-gray-300">
