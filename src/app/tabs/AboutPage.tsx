@@ -59,7 +59,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="mt-4 cursor-default space-y-6 text-sm leading-relaxed text-gray-600 md:text-base dark:text-gray-500">
+        <div className="mt-4 cursor-default space-y-6 text-sm leading-relaxed md:text-base dark:text-gray-500">
           <p>
             I&apos;m the developer who turns ideas into web experiences people
             enjoy using. My mission is to build applications that look great,
