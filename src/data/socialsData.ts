@@ -1,5 +1,5 @@
 import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
-import { BiLogoGmail } from "react-icons/bi";
+import { SiGmail } from "react-icons/si";
 import { PiGithubLogoFill } from "react-icons/pi";
 import { IconType } from "react-icons";
 
@@ -24,7 +24,7 @@ export const socialsData: Socials[] = [
     link: "https://github.com/thesakshijaiswal",
   },
   {
-    icon: BiLogoGmail,
+    icon: SiGmail,
     label: "Gmail",
     heading: "Copy email to clipboard",
     link: "mailto:sakshijaiswal0211@gmail.com?subject=Let's%20Connect%2C%20Sakshi!&body=Hey%20Sakshi%2C%0A%0AI%20really%20enjoyed%20checking%20out%20your%20work%20and%20wanted%20to%20reach%20out.%20Let%27s%20chat%20and%20see%20if%20there%27s%20a%20way%20we%20can%20collaborate%20or%20work%20together.%0A%0ALooking%20forward%20to%20connecting!%0A%0ACheers!",
