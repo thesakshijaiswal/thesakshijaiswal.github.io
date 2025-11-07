@@ -4,6 +4,8 @@ import LogoBox from "@/components/LogoBox";
 import ProjectCards from "@/components/ProjectCards";
 import Button from "@/components/Button";
 import { HiArrowRight } from "react-icons/hi";
+import { PiShootingStar, PiCoffeeBold } from "react-icons/pi";
+import Tag from "@/components/Tag";
 
 export const metadata: Metadata = {
   title: "My Projects",
@@ -27,6 +29,28 @@ export default function ProjectsPage() {
             Things I&apos;ve Built
           </h2>
         </header>
+        <div className="mb-5 flex flex-wrap gap-3">
+          <Tag
+            icon={
+              <PiShootingStar
+                size={16}
+                className="text-purple-500/70 dark:text-purple-300"
+              />
+            }
+            label="Quality Projects"
+            className="dark:border-purple-300/40 dark:hover:bg-purple-300/10"
+          />
+          <Tag
+            icon={
+              <PiCoffeeBold
+                size={16}
+                className="text-indigo-500/70 dark:text-indigo-300"
+              />
+            }
+            label="Powered by Coffee"
+            className="dark:border-indigo-300/40 dark:hover:bg-indigo-300/10"
+          />
+        </div>
         <p className="mt-4 mb-10 cursor-default text-gray-500">
           Every project is a story of curiosity turned into code. I&apos;ve
           built things that not only function but feel right, blending design,
