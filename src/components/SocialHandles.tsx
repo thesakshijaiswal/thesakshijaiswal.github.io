@@ -2,7 +2,7 @@ import { socialsData } from "@/data/socialsData";
 
 export default function SocialHandles() {
   return (
-    <nav className="mt-3 flex items-center gap-4">
+    <nav className="mt-4 flex items-center gap-4 md:mt-3">
       {socialsData.map(({ icon: Icon, link, label }) => {
         return (
           <a
@@ -13,7 +13,7 @@ export default function SocialHandles() {
             rel="noopener noreferrer"
             aria-label={label}
           >
-            <Icon className="size-7" />
+            <Icon className="size-6 md:size-7" />
           </a>
         );
       })}
