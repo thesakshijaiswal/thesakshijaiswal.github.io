@@ -2,6 +2,7 @@ import Hero from "@/sections/Hero";
 import BaseLayout from "@/sections/BaseLayout";
 import AboutPage from "./tabs/AboutPage";
 import Footer from "@/sections/Footer";
+import FloatingMenu from "@/components/FloatingMenu";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           <AboutPage />
         </BaseLayout>
       </div>
+      <FloatingMenu />
       <Footer />
     </>
   );

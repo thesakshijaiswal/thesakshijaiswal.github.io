@@ -1,6 +1,7 @@
 import Hero from "@/sections/Hero";
 import BaseLayout from "@/sections/BaseLayout";
 import Footer from "@/sections/Footer";
+import FloatingMenu from "@/components/FloatingMenu";
 
 export default function TabsLayout({
   children,
@@ -13,6 +14,7 @@ export default function TabsLayout({
         <Hero />
         <BaseLayout>{children}</BaseLayout>
       </div>
+      <FloatingMenu />
       <Footer />
     </>
   );
