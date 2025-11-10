@@ -121,18 +121,12 @@ export default function FloatingPaletteMenu() {
 
   return (
     <>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed inset-0 z-[9998] bg-black/20 backdrop-blur-sm md:hidden"
-            onClick={() => setIsOpen(false)}
-          />
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/20 backdrop-blur-xs md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
 
       <motion.div
         className="pointer-events-auto fixed z-[9999] md:hidden"
