@@ -34,68 +34,62 @@ export default function FloatingPaletteMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const [side, setSide] = useState<"left" | "right">("right");
   const [mounted, setMounted] = useState(false);
+  const [screenHeight, setScreenHeight] = useState(0);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
   const router = useRouter();
   const pathname = usePathname();
-
   useEffect(() => {
     setMounted(true);
+    const h = window.innerHeight;
+    setScreenHeight(h);
 
     const updatePosition = () => {
       const width = window.innerWidth;
-      const height = window.innerHeight;
 
-      // initial position of burger
       const initialX = width - BUTTON_SIZE - EDGE_PADDING;
-      const initialY = height * 0.28;
+      const initialY = h * 0.28;
 
       x.set(initialX);
       y.set(initialY);
     };
 
     updatePosition();
-    window.addEventListener("resize", updatePosition);
-    return () => window.removeEventListener("resize", updatePosition);
+
+    const onResize = () => {
+      const width = window.innerWidth;
+      const initialX = width - BUTTON_SIZE - EDGE_PADDING;
+      x.set(initialX);
+    };
+
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   const handleDragStart = () => {
-    if (isOpen) {
-      setIsOpen(false);
-    }
+    if (isOpen) setIsOpen(false);
   };
 
   const handleDragEnd = () => {
     const currentX = x.get();
     const currentY = y.get();
     const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-
-    // side detection
     const isLeftSide = currentX < windowWidth / 2;
     setSide(isLeftSide ? "left" : "right");
 
     const minY = PALETTE_RADIUS + EDGE_PADDING;
-    const maxY = windowHeight - PALETTE_RADIUS - EDGE_PADDING;
+    const maxY = screenHeight - PALETTE_RADIUS - EDGE_PADDING;
+
     const safeY = Math.max(minY, Math.min(currentY, maxY));
 
     const targetX = isLeftSide
       ? EDGE_PADDING
       : windowWidth - BUTTON_SIZE - EDGE_PADDING;
 
-    animate(x, targetX, {
-      type: "spring",
-      stiffness: 400,
-      damping: 30,
-    });
-
-    animate(y, safeY, {
-      type: "spring",
-      stiffness: 400,
-      damping: 30,
-    });
+    animate(x, targetX, { type: "spring", stiffness: 400, damping: 30 });
+    animate(y, safeY, { type: "spring", stiffness: 400, damping: 30 });
   };
 
   const toggleMenu = () => {
@@ -108,11 +102,13 @@ export default function FloatingPaletteMenu() {
   };
 
   const getMenuItemPosition = (index: number, totalItems: number) => {
-    const baseAngle = side === "right" ? 180 : 0;
+    const safeBaseAngle = side === "right" ? 180 : 0;
+
     const spread = 170;
-    const startAngle = baseAngle - spread / 2;
+    const startAngle = safeBaseAngle - spread / 2;
     const angleStep = spread / (totalItems - 1);
     const angle = startAngle + index * angleStep;
+
     const radian = (angle * Math.PI) / 180;
 
     return {
@@ -143,9 +139,9 @@ export default function FloatingPaletteMenu() {
         style={{
           x,
           y,
-          touchAction: "none",
           left: 0,
           top: 0,
+          touchAction: "none",
         }}
         drag={!isOpen}
         dragMomentum={false}
@@ -159,10 +155,7 @@ export default function FloatingPaletteMenu() {
               ? window.innerWidth - BUTTON_SIZE - EDGE_PADDING
               : 0,
           top: PALETTE_RADIUS + EDGE_PADDING,
-          bottom:
-            typeof window !== "undefined"
-              ? window.innerHeight - PALETTE_RADIUS - EDGE_PADDING
-              : 0,
+          bottom: screenHeight - PALETTE_RADIUS - EDGE_PADDING,
         }}
       >
         <AnimatePresence>
@@ -205,7 +198,7 @@ export default function FloatingPaletteMenu() {
                       e.stopPropagation();
                       handleNavClick(link.href);
                     }}
-                    className={`absolute flex items-center justify-center rounded-full shadow-lg transition-colors will-change-transform ${
+                    className={`absolute flex items-center justify-center rounded-full shadow-lg transition-colors ${
                       isActive
                         ? "bg-blue-500 text-white"
                         : "bg-white text-gray-700 dark:bg-[#2d2f3e] dark:text-gray-200"
@@ -231,7 +224,7 @@ export default function FloatingPaletteMenu() {
             e.stopPropagation();
             toggleMenu();
           }}
-          className="relative flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-xl will-change-transform"
+          className="relative flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-xl"
           style={{
             width: BUTTON_SIZE,
             height: BUTTON_SIZE,
@@ -239,7 +232,6 @@ export default function FloatingPaletteMenu() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
         >
           <div className="relative" style={{ width: 13, height: 13 }}>
             <motion.span
@@ -250,7 +242,6 @@ export default function FloatingPaletteMenu() {
                 rotate: isOpen ? 45 : 0,
                 y: isOpen ? "-50%" : 0,
               }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
             />
             <motion.span
               className="absolute top-1/2 left-0 h-0.5 bg-white"
@@ -259,7 +250,6 @@ export default function FloatingPaletteMenu() {
                 opacity: isOpen ? 0 : 1,
                 scale: isOpen ? 0 : 1,
               }}
-              transition={{ duration: 0.15, ease: "easeInOut" }}
             />
             <motion.span
               className="absolute left-0 h-0.5 bg-white"
@@ -269,7 +259,6 @@ export default function FloatingPaletteMenu() {
                 rotate: isOpen ? -45 : 0,
                 y: isOpen ? "-50%" : 0,
               }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
             />
           </div>
         </motion.button>
