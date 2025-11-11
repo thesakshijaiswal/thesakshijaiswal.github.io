@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   motion,
   AnimatePresence,
@@ -35,10 +35,11 @@ export default function FloatingPaletteMenu() {
   const [side, setSide] = useState<"left" | "right">("right");
   const [mounted, setMounted] = useState(false);
   const [screenHeight, setScreenHeight] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-
+  const sideRef = useRef<"left" | "right">("right");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -55,13 +56,14 @@ export default function FloatingPaletteMenu() {
   useEffect(() => {
     setMounted(true);
     const h = window.innerHeight;
-    console.log(h);
+    const w = window.innerWidth;
     setScreenHeight(h);
+    setScreenWidth(w);
 
     const updatePosition = () => {
-      const width = window.innerWidth;
-
-      const initialX = width - BUTTON_SIZE - EDGE_PADDING;
+      const currentSide = sideRef.current;
+      const initialX =
+        currentSide === "right" ? w - BUTTON_SIZE - EDGE_PADDING : EDGE_PADDING;
       const initialY = h * 0.28;
 
       x.set(initialX);
@@ -72,13 +74,27 @@ export default function FloatingPaletteMenu() {
 
     const onResize = () => {
       const width = window.innerWidth;
-      const initialX = width - BUTTON_SIZE - EDGE_PADDING;
-      x.set(initialX);
+      const height = window.innerHeight;
+      setScreenWidth(width);
+      setScreenHeight(height);
+
+      const currentSide = sideRef.current;
+      const targetX =
+        currentSide === "right"
+          ? width - BUTTON_SIZE - EDGE_PADDING
+          : EDGE_PADDING;
+
+      x.set(targetX);
+      const currentY = y.get();
+      const minY = PALETTE_RADIUS + EDGE_PADDING;
+      const maxY = height - PALETTE_RADIUS - EDGE_PADDING;
+      const safeY = Math.max(minY, Math.min(currentY, maxY));
+      y.set(safeY);
     };
 
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, []);
+  }, [x, y]);
 
   const handleDragStart = () => {
     if (isOpen) setIsOpen(false);
@@ -88,11 +104,14 @@ export default function FloatingPaletteMenu() {
     const currentX = x.get();
     const currentY = y.get();
     const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
     const isLeftSide = currentX < windowWidth / 2;
-    setSide(isLeftSide ? "left" : "right");
-
-    const minY = PALETTE_RADIUS + EDGE_PADDING;
-    const maxY = screenHeight - PALETTE_RADIUS - EDGE_PADDING;
+    const newSide = isLeftSide ? "left" : "right";
+    setSide(newSide);
+    sideRef.current = newSide;
+    const minY = PALETTE_RADIUS + EDGE_PADDING + MENU_ITEM_SIZE / 2;
+    const maxY =
+      windowHeight - PALETTE_RADIUS - EDGE_PADDING - MENU_ITEM_SIZE / 2;
 
     const safeY = Math.max(minY, Math.min(currentY, maxY));
 
@@ -105,6 +124,25 @@ export default function FloatingPaletteMenu() {
   };
 
   const toggleMenu = () => {
+    if (!isOpen) {
+      const currentX = x.get();
+      const currentY = y.get();
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const currentSide = currentX < windowWidth / 2 ? "left" : "right";
+
+      const minY = PALETTE_RADIUS + EDGE_PADDING + MENU_ITEM_SIZE / 2;
+      const maxY =
+        windowHeight - PALETTE_RADIUS - EDGE_PADDING - MENU_ITEM_SIZE / 2;
+
+      if (currentY < minY || currentY > maxY) {
+        const safeY = Math.max(minY, Math.min(currentY, maxY));
+        y.set(safeY);
+      }
+
+      setSide(currentSide);
+      sideRef.current = currentSide;
+    }
     setIsOpen(!isOpen);
   };
 
@@ -156,12 +194,9 @@ export default function FloatingPaletteMenu() {
         onDragEnd={handleDragEnd}
         dragConstraints={{
           left: EDGE_PADDING,
-          right:
-            typeof window !== "undefined"
-              ? window.innerWidth - BUTTON_SIZE - EDGE_PADDING
-              : 0,
-          top: PALETTE_RADIUS + EDGE_PADDING,
-          bottom: screenHeight - PALETTE_RADIUS - EDGE_PADDING,
+          right: screenWidth - BUTTON_SIZE - EDGE_PADDING,
+          top: PALETTE_RADIUS + EDGE_PADDING + MENU_ITEM_SIZE / 2,
+          bottom: screenHeight - PALETTE_RADIUS - EDGE_PADDING - MENU_ITEM_SIZE,
         }}
       >
         <AnimatePresence>
