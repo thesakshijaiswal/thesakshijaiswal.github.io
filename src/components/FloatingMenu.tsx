@@ -41,9 +41,21 @@ export default function FloatingPaletteMenu() {
 
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     setMounted(true);
     const h = window.innerHeight;
+    console.log(h);
     setScreenHeight(h);
 
     const updatePosition = () => {
@@ -218,7 +230,7 @@ export default function FloatingPaletteMenu() {
             e.stopPropagation();
             toggleMenu();
           }}
-          className="relative flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-xl"
+          className="relative flex cursor-grab items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-xl"
           style={{
             width: BUTTON_SIZE,
             height: BUTTON_SIZE,
