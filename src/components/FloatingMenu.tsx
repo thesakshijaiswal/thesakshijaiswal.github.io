@@ -30,7 +30,7 @@ const MENU_ITEM_SIZE = 40;
 const PALETTE_RADIUS = 82;
 const EDGE_PADDING = 16;
 
-export default function FloatingPaletteMenu() {
+export default function FloatingMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const [side, setSide] = useState<"left" | "right">("right");
   const [mounted, setMounted] = useState(false);
