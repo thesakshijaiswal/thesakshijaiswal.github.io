@@ -2,47 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  FaUserTie,
-  FaCode,
-  FaBriefcase,
-  FaFileCode,
-  FaUserGraduate,
-  FaComments,
-} from "react-icons/fa";
-
-const navLinks = [
-  {
-    label: "Who am I ?",
-    href: "/",
-    icon: FaUserTie,
-  },
-  {
-    label: "My Superpowers",
-    href: "/tabs/skills",
-    icon: FaCode,
-  },
-  {
-    label: "Experience & Impact",
-    href: "/tabs/experience",
-    icon: FaBriefcase,
-  },
-  {
-    label: "Things I've Built",
-    href: "/tabs/projects",
-    icon: FaFileCode,
-  },
-  {
-    label: "Academic Path",
-    href: "/tabs/education",
-    icon: FaUserGraduate,
-  },
-  {
-    label: "Let's Talk",
-    href: "/tabs/contact",
-    icon: FaComments,
-  },
-];
+import { navigationData } from "@/data/navigationData";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -50,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className="mt-11 hidden min-w-44 shrink-0 text-sm md:block">
       <ul>
-        {navLinks.map((link) => {
+        {navigationData.map((link) => {
           const isActive = pathname === link.href;
           const IconComponent = link.icon;
 

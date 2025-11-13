@@ -7,23 +7,7 @@ import {
   animate,
 } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
-import {
-  FaUserTie,
-  FaCode,
-  FaBriefcase,
-  FaFileCode,
-  FaUserGraduate,
-  FaComments,
-} from "react-icons/fa";
-
-const navLinks = [
-  { label: "Who am I ?", href: "/", icon: FaUserTie },
-  { label: "My Superpowers", href: "/tabs/skills", icon: FaCode },
-  { label: "Experience & Impact", href: "/tabs/experience", icon: FaBriefcase },
-  { label: "Things I've Built", href: "/tabs/projects", icon: FaFileCode },
-  { label: "Academic Path", href: "/tabs/education", icon: FaUserGraduate },
-  { label: "Let's Talk", href: "/tabs/contact", icon: FaComments },
-];
+import { navigationData } from "@/data/navigationData";
 
 const BUTTON_SIZE = 40;
 const MENU_ITEM_SIZE = 40;
@@ -209,8 +193,11 @@ export default function FloatingMenu() {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              {navLinks.map((link, index) => {
-                const position = getMenuItemPosition(index, navLinks.length);
+              {navigationData.map((link, index) => {
+                const position = getMenuItemPosition(
+                  index,
+                  navigationData.length,
+                );
                 const IconComponent = link.icon;
                 const isActive = pathname === link.href;
 
