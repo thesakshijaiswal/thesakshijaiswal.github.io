@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
 import { navigationData } from "@/data/navigationData";
+import Hamburger from "./Hamburger";
 
 const BUTTON_SIZE = 40;
 const MENU_ITEM_SIZE = 40;
@@ -246,50 +247,14 @@ export default function FloatingMenu() {
             </div>
           )}
         </AnimatePresence>
-
-        <motion.button
+        <Hamburger
+          isOpen={isOpen}
+          size={BUTTON_SIZE}
           onClick={(e) => {
             e.stopPropagation();
             toggleMenu();
           }}
-          className="relative flex cursor-grab items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-xl"
-          style={{
-            width: BUTTON_SIZE,
-            height: BUTTON_SIZE,
-          }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-        >
-          <div className="relative" style={{ width: 13, height: 13 }}>
-            <motion.span
-              className="absolute left-0 h-0.5 bg-white"
-              style={{ width: 13 }}
-              animate={{
-                top: isOpen ? "50%" : "20%",
-                rotate: isOpen ? 45 : 0,
-                y: isOpen ? "-50%" : 0,
-              }}
-            />
-            <motion.span
-              className="absolute top-1/2 left-0 h-0.5 bg-white"
-              style={{ width: 13 }}
-              animate={{
-                opacity: isOpen ? 0 : 1,
-                scale: isOpen ? 0 : 1,
-              }}
-            />
-            <motion.span
-              className="absolute left-0 h-0.5 bg-white"
-              style={{ width: 13 }}
-              animate={{
-                top: isOpen ? "50%" : "80%",
-                rotate: isOpen ? -45 : 0,
-                y: isOpen ? "-50%" : 0,
-              }}
-            />
-          </div>
-        </motion.button>
+        />
       </motion.div>
     </>
   );
