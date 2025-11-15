@@ -17,8 +17,12 @@ export default function ContactPage() {
         </LogoBox>
         <h2 className="cursor-default text-2xl font-bold">Contact Me</h2>
       </header>
-      <p className="mt-4 text-gray-500">This is the Contact section content.</p>
-
+      <p className="mt-4 cursor-default text-gray-500">
+        Great work starts with great conversations. Whether you want to
+        brainstorm ideas, collaborate on something exciting, or just say hi!
+        I&apos;m always open to meaningful chats. Let&apos;s connect and build
+        something worth talking about.
+      </p>
       <WIP />
     </section>
   );
