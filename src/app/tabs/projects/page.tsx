@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import SkillFlip from "@/components/SkillFlip";
+import ProjectFlip from "@/components/ProjectFlip";
 import LogoBox from "@/components/LogoBox";
 import ProjectCards from "@/components/ProjectCards";
 import Button from "@/components/Button";
@@ -23,7 +23,7 @@ export default function ProjectsPage() {
       >
         <header className="mb-10 flex items-center gap-4">
           <LogoBox className="size-20 place-content-center">
-            <SkillFlip />
+            <ProjectFlip />
           </LogoBox>
           <h2 className="cursor-default text-2xl font-bold">
             Things I&apos;ve Built
