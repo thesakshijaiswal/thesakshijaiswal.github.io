@@ -13,8 +13,8 @@ export default function ThemeToggle() {
 
   const themes = ["light", "dark", "system"] as const;
   const icons = {
-    light: FiSun,
-    dark: FiMoon,
+    light: FiMoon,
+    dark: FiSun,
     system: FiMonitor,
   };
 
