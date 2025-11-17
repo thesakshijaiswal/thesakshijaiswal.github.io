@@ -9,20 +9,17 @@ export default function ProjectFlip() {
   return (
     <LogoFlipDeck
       items={[
-        <LogoItem
-          key="be-commerce"
-          className="bg-red-50 pr-1.5 pl-2 dark:bg-white"
-        >
+        <LogoItem key="be-commerce" className="bg-blue-100 pr-1.5 pl-2">
           <Image src={Logo1} alt="be-commerce" />
         </LogoItem>,
         <LogoItem key="rewarder" className="overflow-hidden bg-indigo-500">
-          <Image src={Logo2} alt="rewarder" />
+          <Image src={Logo2} alt="rewarder" className="w-14 object-contain" />
         </LogoItem>,
-        <LogoItem key="fundverse" className="bg-[#22125b]">
+        <LogoItem key="fundverse" className="bg-violet-950">
           <Image src={Logo3} alt="fundverse" />
         </LogoItem>,
         <LogoItem key="fusion" className="bg-black">
-          <Image src={Logo4} alt="fusion" />
+          <Image src={Logo4} alt="fusion" className="w-14 object-contain" />
         </LogoItem>,
       ]}
     />
