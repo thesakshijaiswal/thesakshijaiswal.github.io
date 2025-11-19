@@ -30,55 +30,51 @@ export default function ContactPage() {
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
-            <label className="block text-sm/6 font-semibold text-white">
-              First name
-            </label>
+            <label className="block text-sm/6 font-semibold">First name</label>
             <div className="mt-2.5">
               <input
                 id="first-name"
                 type="text"
                 name="first-name"
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500"
+                placeholder="Your First Name"
+                className="block w-full rounded-md bg-gray-50 px-3.5 py-2 text-sm outline-1 -outline-offset-1 outline-gray-300/70 placeholder:text-sm placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 dark:bg-white/5 dark:outline-white/10"
               />
             </div>
           </div>
           <div>
-            <label className="block text-sm/6 font-semibold text-white">
-              Last name
-            </label>
+            <label className="block text-sm/6 font-semibold">Last name</label>
             <div className="mt-2.5">
               <input
                 id="last-name"
                 type="text"
                 name="last-name"
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500"
+                placeholder="Your Last Name"
+                className="block w-full rounded-md bg-gray-50 px-3.5 py-2 text-sm outline-1 -outline-offset-1 outline-gray-300/70 placeholder:text-sm placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 dark:bg-white/5 dark:outline-white/10"
               />
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label className="block text-sm/6 font-semibold text-white">
-              Email
-            </label>
+            <label className="block text-sm/6 font-semibold">Email</label>
             <div className="mt-2.5">
               <input
                 id="email"
                 type="email"
                 name="email"
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500"
+                placeholder="Your Email"
+                className="block w-full rounded-md bg-gray-50 px-3.5 py-2 text-sm outline-1 -outline-offset-1 outline-gray-300/70 placeholder:text-sm placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 dark:bg-white/5 dark:outline-white/10"
               />
             </div>
           </div>
 
           <div className="sm:col-span-2">
-            <label className="block text-sm/6 font-semibold text-white">
-              Message
-            </label>
+            <label className="block text-sm/6 font-semibold">Message</label>
             <div className="mt-2.5">
               <textarea
                 id="message"
                 name="message"
+                placeholder="Your Message"
                 rows={4}
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500"
+                className="block w-full rounded-md bg-gray-50 px-3.5 py-2 text-sm outline-1 -outline-offset-1 outline-gray-300/70 placeholder:text-sm placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 dark:bg-white/5 dark:outline-white/10"
               ></textarea>
             </div>
             <div className="mt-12 flex justify-center">
