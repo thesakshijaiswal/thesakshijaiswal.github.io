@@ -104,10 +104,10 @@ export default function ContactPage() {
                 id="message"
                 name="message"
                 placeholder="Write your message…"
-                rows={4}
+                rows={5}
                 required
                 aria-required="true"
-                className="block w-full rounded-md bg-gray-50 px-3.5 py-2 text-sm outline-1 -outline-offset-1 outline-gray-300/70 placeholder:text-sm placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 dark:bg-white/5 dark:outline-white/10"
+                className="block w-full resize-none rounded-md bg-gray-50 px-3.5 py-2 text-sm outline-1 -outline-offset-1 outline-gray-300/70 placeholder:text-sm placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 dark:bg-white/5 dark:outline-white/10"
               ></textarea>
             </div>
 
