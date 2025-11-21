@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import LogoBox from "@/components/LogoBox";
 import { MdConnectWithoutContact } from "react-icons/md";
+import ContactFlip from "@/components/ContactFlip";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function ContactPage() {
     >
       <header className="mb-10 flex items-center gap-4">
         <LogoBox aria-hidden="true" className="size-20 place-content-center">
-          <MdConnectWithoutContact className="size-11" aria-hidden="true" />
+          <ContactFlip />
         </LogoBox>
 
         <h2 id="contact-heading" className="cursor-default text-2xl font-bold">
