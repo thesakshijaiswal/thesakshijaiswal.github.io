@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import LogoBox from "@/components/LogoBox";
-import { HiAcademicCap } from "react-icons/hi2";
 import EducationCard from "@/components/EducationCard";
 import { GoTrophy } from "react-icons/go";
 import { LiaMedalSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
+import EducationFlip from "@/components/EducationFlip";
 
 export const metadata: Metadata = {
   title: "Education",
@@ -21,7 +21,7 @@ export default function EducationPage() {
     >
       <header className="mb-10 flex items-center gap-4">
         <LogoBox className="size-20 place-content-center">
-          <HiAcademicCap className="size-11" />
+          <EducationFlip />
         </LogoBox>
         <h2 className="cursor-default text-2xl font-bold">My Academic Path</h2>
       </header>
