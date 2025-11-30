@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MdConnectWithoutContact } from "react-icons/md";
 import Button from "@/components/Button";
+import Toast from "@/components/Toast";
 
 interface Errors {
   firstName?: string;
@@ -14,6 +15,7 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [toast, setToast] = useState<string | null>(null);
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -99,9 +101,15 @@ export default function ContactForm() {
       body: JSON.stringify(body),
     });
 
+    const result = await response.json();
+    setLoading(false);
+
     if (response.ok) {
       form.reset();
       setTouched({});
+      setToast("Form successfully submitted! I will get in touch shortly 🎉");
+    } else {
+      setToast(result.error || "Something went wrong.");
     }
   };
 
@@ -189,6 +197,8 @@ export default function ContactForm() {
           </div>
         </div>
       </form>
+
+      {toast && <Toast message={toast} onClose={() => setToast(null)} />}
     </>
   );
 }
