@@ -96,7 +96,7 @@ export default function ContactForm() {
       return;
     }
 
-    const response = await fetch("/api/contact", {
+    const response = await fetch("https://thesakshi.vercel.app/api/contact", {
       method: "POST",
       body: JSON.stringify(body),
     });
