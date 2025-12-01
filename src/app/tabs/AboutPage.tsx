@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Avatar from "@/assets/Sakshi_Ghibli.png";
+import Avatar from "@/assets/Sakshi_Profile.webp";
 import GlowLine from "@/components/GlowLine";
 import Tag from "@/components/Tag";
 import Button from "@/components/Button";
@@ -22,7 +22,13 @@ export default function AboutPage() {
       <div className="ml-8">
         <div className="mb-10 flex items-center gap-4">
           <LogoBox className="size-20 place-content-baseline overflow-hidden">
-            <Image src={Avatar} alt="Profile picture" width={80} height={80} />
+            <Image
+              src={Avatar}
+              priority
+              alt="Profile picture"
+              width={80}
+              height={80}
+            />
           </LogoBox>
           <h1 className="cursor-default text-2xl font-bold">Who Am I?</h1>
         </div>
