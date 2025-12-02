@@ -12,6 +12,9 @@ interface Errors {
 }
 
 export default function ContactForm() {
+  const API_URL =
+    process.env.NEXT_PUBLIC_CONTACT_API_URL ??
+    "https://thesakshi.vercel.app/api/contact";
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
@@ -96,8 +99,11 @@ export default function ContactForm() {
       return;
     }
 
-    const response = await fetch("/api/contact", {
+    const response = await fetch(API_URL, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(body),
     });
 
