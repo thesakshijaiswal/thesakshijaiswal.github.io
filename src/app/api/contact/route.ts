@@ -1,8 +1,33 @@
 import { NextResponse } from "next/server";
 
-export const runtime = "nodejs"; 
+export const runtime = "nodejs";
+
+const ALLOWED_ORIGINS = [
+  "https://sakshi.is-cool.dev",
+  "https://thesakshi.vercel.app",
+];
+
+function getCorsHeaders(origin: string | null) {
+  const isAllowed = origin && ALLOWED_ORIGINS.includes(origin);
+  return {
+    "Access-Control-Allow-Origin": isAllowed ? origin : "",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+}
+
+export async function OPTIONS(request: Request) {
+  const origin = request.headers.get("origin");
+  return new NextResponse(null, {
+    status: 204,
+    headers: getCorsHeaders(origin),
+  });
+}
 
 export async function POST(request: Request) {
+  const origin = request.headers.get("origin");
+  const corsHeaders = getCorsHeaders(origin);
+
   try {
     const { Resend } = await import("resend");
 
@@ -12,7 +37,7 @@ export async function POST(request: Request) {
       console.error("Missing RESEND_API_KEY");
       return NextResponse.json(
         { error: "Server configuration error" },
-        { status: 500 }
+        { status: 500, headers: corsHeaders }
       );
     }
 
@@ -20,16 +45,16 @@ export async function POST(request: Request) {
 
     const { firstName, lastName, email, message } = await request.json();
 
-     if (!firstName || !email || !message) {
+    if (!firstName || !email || !message) {
       return NextResponse.json(
         { error: "All fields are required." },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
-    
+
     const fullName = `${firstName} ${lastName || ""}`.trim();
 
-   const html = `
+    const html = `
   <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f4f6f8; padding: 32px 16px; display: flex; justify-content: center;">
     <div style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 32px; color: #1a1a1a;">
       <h1 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #111;">You have received a New Message from your Prettyfolio 🌸</h1>
@@ -59,12 +84,15 @@ export async function POST(request: Request) {
       text: message,
     });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json(
+      { success: true },
+      { headers: corsHeaders }
+    );
   } catch (error: any) {
     console.error("Email error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500, headers: getCorsHeaders(request.headers.get("origin")) }
     );
   }
 }
