@@ -72,9 +72,9 @@ export default function AboutPage() {
             load fast, and work for everyone.
           </p>
           <p>
-            I&apos;m a 23-year-old CSE grad, and since beginning my programming
+            I&apos;m a 23 year old CSE grad, and since beginning my programming
             journey in 2020, my curiosity has pushed me to dive deep into
-            full-stack development, with a strong focus on accessibility,
+            fullstack development, with a strong focus on accessibility,
             performance, and SEO.
           </p>
           <p>
@@ -83,10 +83,10 @@ export default function AboutPage() {
             boosted sales by 70%.
           </p>
           <p>
-            Beyond coding, I enjoy music, meeting like-minded people, and
+            Beyond coding, I enjoy music, meeting like minded people, and
             sharing ideas. Known as the “padhaku” among friends, I take pride in
             being a consistent academic topper and graduating in 2024. I&apos;m
-            currently open to full-time roles and freelance opportunities.
+            currently open to fulltime roles and freelance opportunities.
           </p>
         </div>
 

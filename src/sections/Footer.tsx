@@ -6,9 +6,9 @@ export default function Footer() {
       <section className="mx-auto w-full max-w-6xl px-6 pt-16 pb-7 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex flex-col items-center md:items-start">
-            <h4 className="text-xl font-semibold text-gray-600 md:text-2xl dark:text-gray-300">
+            <h2 className="text-xl font-semibold text-gray-600 md:text-2xl dark:text-gray-300">
               Let&apos;s Work Together
-            </h4>
+            </h2>
             <p className="mt-1 text-center text-xs whitespace-nowrap text-gray-800 md:text-sm dark:text-gray-400">
               Collabs, roles, or big ideas? Let&apos;s make it happen
             </p>
