@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import {
+  validateContactForm,
+  escapeHtml,
+} from "@/lib/contactForm.validator";
+
 
 export const runtime = "nodejs";
 
@@ -43,14 +48,20 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey);
 
-    const { firstName, lastName, email, message } = await request.json();
+    const body = await request.json();
+    const validationErrors = validateContactForm(body);
 
-    if (!firstName || !email || !message) {
+    if (Object.keys(validationErrors).length > 0) {
       return NextResponse.json(
         { error: "All fields are required." },
         { status: 400, headers: corsHeaders }
       );
     }
+    const firstName = escapeHtml(body.firstName.trim());
+    const lastName = escapeHtml(body.lastName?.trim() || "");
+    const email = body.email.trim().toLowerCase();
+    const message = escapeHtml(body.message.trim());
+
 
     const fullName = `${firstName} ${lastName || ""}`.trim();
 

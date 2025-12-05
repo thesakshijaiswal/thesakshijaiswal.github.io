@@ -4,69 +4,51 @@ import { useState } from "react";
 import { MdConnectWithoutContact } from "react-icons/md";
 import Button from "@/components/Button";
 import Toast from "@/components/Toast";
-
-interface Errors {
-  firstName?: string;
-  email?: string;
-  message?: string;
-}
+import {
+  validateContactForm,
+  ContactFormErrors,
+} from "@/lib/contactForm.validator";
 
 export default function ContactForm() {
   const API_URL =
     process.env.NEXT_PUBLIC_CONTACT_API_URL ??
     "https://thesakshi.vercel.app/api/contact";
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<Errors>({});
+  const [errors, setErrors] = useState<ContactFormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [toast, setToast] = useState<string | null>(null);
 
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const handlePaste = (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
+    const pastedText = e.clipboardData.getData("text");
 
-  const validate = (values: any) => {
-    const newErrors: Errors = {};
+    const containsCodeOrHtml =
+      /<\/?[a-z][\s\S]*>|function\s*\(|=>|\{|\};|<\/script>/i.test(pastedText);
 
-    if (!values.firstName || values.firstName.trim().length < 2) {
-      newErrors.firstName = "Please enter a valid first name.";
+    if (containsCodeOrHtml) {
+      e.preventDefault();
+
+      setErrors((prev) => ({
+        ...prev,
+        message: "Code or HTML is not allowed in the message.",
+      }));
+
+      setTouched((prev) => ({ ...prev, message: true }));
     }
-
-    if (!values.email) {
-      newErrors.email = "Email is required.";
-    } else if (!emailRegex.test(values.email)) {
-      newErrors.email = "Enter a valid email address.";
-    }
-
-    if (!values.message || values.message.trim().length < 20) {
-      newErrors.message = "Message must be at least 20 characters.";
-    }
-
-    return newErrors;
   };
 
   const validateField = (name: string, value: string) => {
-    let message = "";
+    const fieldErrors = validateContactForm({ [name]: value });
 
-    if (name === "firstName" && (!value || value.trim().length < 2)) {
-      message = "Please enter a valid first name.";
-    }
-
-    if (name === "email") {
-      if (!value) message = "Email is required.";
-      else if (!emailRegex.test(value))
-        message = "Enter a valid email address.";
-    }
-
-    if (name === "message" && (!value || value.trim().length < 20)) {
-      message = "Message must be at least 20 characters.";
-    }
-
-    setErrors((prev) => ({ ...prev, [name]: message || undefined }));
+    setErrors((prev) => ({
+      ...prev,
+      [name]: fieldErrors[name as keyof ContactFormErrors],
+    }));
   };
 
   const handleBlur = (
     e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
-
     setTouched((prev) => ({ ...prev, [name]: true }));
     validateField(name, value);
   };
@@ -91,7 +73,7 @@ export default function ContactForm() {
       message: true,
     });
 
-    const validationErrors = validate(body);
+    const validationErrors = validateContactForm(body);
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length > 0) {
@@ -101,9 +83,7 @@ export default function ContactForm() {
 
     const response = await fetch(API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
 
@@ -186,6 +166,7 @@ export default function ContactForm() {
               rows={5}
               placeholder="Write your message…"
               onBlur={handleBlur}
+              onPaste={handlePaste}
               className="mt-2.5 block w-full resize-none rounded-md bg-gray-50 px-3.5 py-2 text-sm outline-1 outline-gray-300/70 dark:bg-white/5 dark:outline-white/10"
             />
             {touched.message && errors.message && (
