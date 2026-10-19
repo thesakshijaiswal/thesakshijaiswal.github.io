@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Avatar from "@/assets/Sakshi_Profile.webp";
 import GlowLine from "@/components/GlowLine";
@@ -28,6 +29,9 @@ export default function AboutPage() {
               alt="Profile picture"
               width={80}
               height={80}
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
+              className="pointer-events-none"
             />
           </LogoBox>
           <h1 className="cursor-default text-2xl font-bold">Who Am I?</h1>
